@@ -1,0 +1,81 @@
+/* Nav */
+.btn-login{
+    background-color: #2AD401;
+}
+
+.categories-btn{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background-color: rgb(234, 234, 234);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #2AD401;
+}
+
+.categories-btn:hover{
+    color: #2AD401;
+}
+
+.img-nav{
+    display: none;
+}
+
+.input-search-nav{
+    display: block;
+}
+
+/* AKhir Navigasi */
+
+/* Header */
+.img-header{
+    display: block;
+}
+
+.input-search-header{
+    display: none;
+}
+
+/* AKhir Header */
+
+/* Main - halaman utama */
+    .main-halaman-utama{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        flex-direction: row;
+        gap: 36px;
+    }
+
+    .kiri-main-halaman-utama{
+        width: 70%;
+    }
+
+    .kanan-main-halaman-utama{
+        width: 30%;
+    }
+
+/* Versi mobile */
+@media screen and (max-width: 576px) {
+    .img-nav{
+        display: block;
+    }
+
+    .input-search-nav{
+        display: none;
+    }
+
+    .img-header{
+        display: none;
+    }
+
+    .input-search-header{
+        display: block;
+    }
+
+    .main-halaman-utama{
+        flex-direction: column-reverse;
+    }
+}
