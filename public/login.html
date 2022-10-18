@@ -25,17 +25,23 @@
                     <form>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="username" placeholder="username" class="form-control my-3 p-3">
+                                <input type="username" id="login_input_username" placeholder="username" class="form-control my-3 p-3">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="password" placeholder="******" class="form-control my-3 p-3">
+                                <input type="password" id="login_input_password" placeholder="******" class="form-control my-3 p-3">
                             </div>
                         </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="login_ingat_saya" />
+                              <label class="form-check-label" for="remember-me"> Ingat Saya Selalu </label>
+                            </div>
+                          </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <button type="button" class="btn1 mt-3 mb-5">LOGIN</button>
+                                <button id="login_btn" type="button" class="btn1 mt-3 mb-5">LOGIN</button>
                                 <p>Don't have an account? <a href="#">Register here</a></p>
                                 <br>
                             </div>
@@ -45,6 +51,6 @@
             </div>
         </div>
     </section>
-
+    <script src="./../script/script_login.js"></script>
   </body>
 </html>
