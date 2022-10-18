@@ -30,6 +30,10 @@
 /* AKhir Navigasi */
 
 /* Header */
+header{
+    background-color: white;
+}
+
 .img-header{
     display: block;
 }
@@ -44,7 +48,7 @@
     .main-halaman-utama{
         display: flex;
         justify-content:space-between;
-        align-items: center;
+        /* align-items: center; */
         flex-direction: row;
         gap: 36px;
     }
@@ -53,12 +57,26 @@
         width: 70%;
     }
 
+    .artikel-utama{
+        flex-direction: row;
+        gap: 10px;
+    }
+
     .kanan-main-halaman-utama{
         width: 30%;
+        display: flex;
+        justify-content: end;
+    }
+
+    .artikel-populer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
     }
 
 /* Versi mobile */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 767px) {
     .img-nav{
         display: block;
     }
@@ -78,4 +96,61 @@
     .main-halaman-utama{
         flex-direction: column-reverse;
     }
+
+    .kiri-main-halaman-utama{
+        width: 100%;
+    }
+
+    .artikel-utama{
+        flex-direction: column;
+    }
+
+    .kanan-main-halaman-utama{
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* AUTO ME */
+/* width */
+.width-100{
+    width: 100%;
+}
+
+/* text */
+.text-12px{
+    font-size: 12px;
+}
+
+.text-16px{
+    font-size: 16px;
+}
+
+.text-20px{
+    font-size: 20px;
+}
+
+.text-24px{
+    font-size: 24px;
+}
+
+/* image */
+.img-me{
+    width: 100%;
+    height: auto;
+}
+
+/* anchor */
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: black;
+}
+
+/* color */
+.bg-prima{
+    background-color: #2AD401;
 }
