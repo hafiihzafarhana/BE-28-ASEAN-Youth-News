@@ -12,9 +12,11 @@
     <script src="https://kit.fontawesome.com/99d4b82606.js" crossorigin="anonymous"></script>
 
     <!-- style pribadi -->
+    <link rel="stylesheet" href="./../styleKomponen/navbar.css">
     <link rel="stylesheet" href="./../style/style.css">
+    <link rel="stylesheet" href="./../styleKomponen/lay_img_typo.css">
 
-    <title>Hello, world!</title>
+    <title>ASEAN Youth News</title>
   </head>
   <body>
 
@@ -28,7 +30,9 @@
           <div class="row">
             <div class="col-md-12">
                 <input type="text" class="form-control input-search-nav" placeholder="Searching">
-                <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-nav" width="76">
+                <a href="./index.html">
+                  <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-nav" width="76">
+                </a>
             </div>
           </div>
           <!-- warna : 2AD401 -->
@@ -37,7 +41,9 @@
     </nav>
     <header class="pt-4 shadow">
         <div class="container">
-            <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-header mb-3" width="96">
+            <a href="./index.html">
+              <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-header mb-3" width="96">
+            </a>
             <div class="row">
                 <div class="col-md-12">
                     <input type="text" class="form-control input-search-header mb-4" placeholder="Searching">
@@ -51,19 +57,10 @@
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-          </div>
-          <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
+          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Sosial</a>
+          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Kepemudaan</a>
+          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Bisnis</a>
+          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Kepemimpinan</a>
         </div>
       </div>
 
@@ -77,11 +74,11 @@
               <div class="d-flex align-items-start justify-content-center artikel-utama">
                     <div class="width-100">
                         <a href="">
-                          <img src="https://th.bing.com/th/id/OIP.CqydbSLzjBZslSHXytdpaQHaD4?pid=ImgDet&w=1600&h=840&rs=1" class="img-me" alt="">
+                          <img src="https://th.bing.com/th/id/OIP.CqydbSLzjBZslSHXytdpaQHaD4?pid=ImgDet&w=1600&h=840&rs=1" class="img-fluid rounded" alt="">
                         </a>
                     </div>
                     <div class="width-100">
-                        <p class="text-24px fw-bold">Hafi Ihza Farhana</p>
+                        <p class="text-24px fw-bold">Pemuda ASEAN Menyuarakan Aspirasi Mengenai Kacaunya LGBT</p>
                         <p class="text-16px">Sunday, 16 October 2022</p>
                     </div>
                   </div>
@@ -173,8 +170,10 @@
         </div>
         <!-- Sisi kanan -->
         <div class="kanan-main-halaman-utama shadow-sm p-3">
-            <div class="row">
-              <div class="col-12">
+          <div class="row">
+            <div class="col-12">
+                <p class="text-24px fw-bold">Terkini</p>
+                <hr width="50%"/>
                 <a href="">
                   <div class="card" style="width: 100%;">
                     <img src="https://media.suara.com/pictures/970x544/2019/09/04/24649-mahasiswa-unsyiah-juara-forum-pemuda-asean.jpg" class="card-img-top" alt="...">
@@ -190,7 +189,7 @@
     <!-- Main end -->
 
     <!-- Footer -->
-    <footer class="position-absolute bg-prima py-2 text-white fw-bolder" style="width: 100%;">
+    <footer class="position-absolute bg-prima py-2 text-white fw-bolder mt-3" style="width: 100%;">
       <p class="text-center">@ASEAN Youth News - 2022</p>
     </footer>
 

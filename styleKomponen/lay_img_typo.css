@@ -1,0 +1,44 @@
+/* AUTO ME */
+/* width */
+.width-100{
+    width: 100%;
+}
+
+/* text */
+.text-12px{
+    font-size: 12px;
+}
+
+.text-16px{
+    font-size: 16px;
+}
+
+.text-20px{
+    font-size: 20px;
+}
+
+.text-24px{
+    font-size: 24px;
+}
+
+/* image */
+.img-me{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* anchor */
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: black;
+}
+
+/* color */
+.bg-prima{
+    background-color: #2AD401;
+}
