@@ -1,0 +1,35 @@
+.main-halaman-detai-artikel{
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    gap: 36px;
+}
+
+.kiri-main-halaman-detai-artikel{
+    width: 70%;
+}
+
+.kanan-main-halaman-detai-artikel{
+    width: 30%;
+}
+
+.detail_artikel_nama_icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 767px) {
+    .main-halaman-detai-artikel{
+        flex-direction: column;
+    }
+
+    .kiri-main-halaman-detai-artikel{
+        width: 100%;
+    }
+
+    .kanan-main-halaman-detai-artikel{
+        width: 100%;
+    }
+}

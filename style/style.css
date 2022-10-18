@@ -1,54 +1,7 @@
-/* Nav */
-.btn-login{
-    background-color: #2AD401;
-}
-
-.categories-btn{
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    background-color: rgb(234, 234, 234);
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: #2AD401;
-}
-
-.categories-btn:hover{
-    color: #2AD401;
-}
-
-.img-nav{
-    display: none;
-}
-
-.input-search-nav{
-    display: block;
-}
-
-/* AKhir Navigasi */
-
-/* Header */
-header{
-    background-color: white;
-}
-
-.img-header{
-    display: block;
-}
-
-.input-search-header{
-    display: none;
-}
-
-/* AKhir Header */
-
 /* Main - halaman utama */
     .main-halaman-utama{
         display: flex;
         justify-content:space-between;
-        /* align-items: center; */
         flex-direction: row;
         gap: 36px;
     }
@@ -77,22 +30,6 @@ header{
 
 /* Versi mobile */
 @media screen and (max-width: 767px) {
-    .img-nav{
-        display: block;
-    }
-
-    .input-search-nav{
-        display: none;
-    }
-
-    .img-header{
-        display: none;
-    }
-
-    .input-search-header{
-        display: block;
-    }
-
     .main-halaman-utama{
         flex-direction: column-reverse;
     }
@@ -109,48 +46,4 @@ header{
         width: 100%;
         justify-content: center;
     }
-}
-
-/* AUTO ME */
-/* width */
-.width-100{
-    width: 100%;
-}
-
-/* text */
-.text-12px{
-    font-size: 12px;
-}
-
-.text-16px{
-    font-size: 16px;
-}
-
-.text-20px{
-    font-size: 20px;
-}
-
-.text-24px{
-    font-size: 24px;
-}
-
-/* image */
-.img-me{
-    width: 100%;
-    height: auto;
-}
-
-/* anchor */
-a{
-    text-decoration: none;
-    color: black;
-}
-
-a:hover{
-    color: black;
-}
-
-/* color */
-.bg-prima{
-    background-color: #2AD401;
 }
