@@ -2,66 +2,97 @@
 <!-- Designined by CodingLab - youtube.com/codinglabyt -->
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8">
-    <title> Registration Form</title>
-    <link rel="stylesheet" href="register.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
-<body>
-  <div class="container">
-    <center><div class="title">ASEAN YOUTH FORUM</div></center>
-    <center><div class="title">Create account</div></center>
-    <div class="content">
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-            <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" required>
+    <meta charset="UTF-8" />
+    <title>ASEAN Youth News | Register</title>
+    <link rel="stylesheet" href="./../style/style_register.css" />
+    <link rel="stylesheet" href="./../styleKomponen/lay_img_typo.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./../Assets/icon/icon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="d-flex justify-content-center align-items-center mx-2">
+    <div class="container p-3">
+      <div class="title">
+        <h3 class="text-center">ASEAN Youth News</h3>
+      </div>
+      <div class="title text-center">Create account</div>
+      <div class="content">
+        <form action="#">
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Username</span>
+              <input type="text" placeholder="Enter your username" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Email</span>
+              <input type="text" placeholder="Enter your email" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Born</span>
+              <input type="date" placeholder="Enter your number" required />
+            </div>
+            <div class="input-box">
+              <span class="details">Password</span>
+              <input type="text" placeholder="Enter your password" required />
+            </div>
+            <div class="mx-1 d-flex gap-2 flex-column">
+              <span class="details">Gender</span>
+              <div class="d-flex flex-row gap-2">
+                <div class="form-check">
+                  <input
+                    class="form-check-input bg-prima"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault1"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Man
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault1"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Woman
+                  </label>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
-          </div>
-        </div>
-        <div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <span class="gender-title">Gender</span>
-          <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-        </div>
-        <div class="option">
-          <span class="country-title">Country</span>
-            <select>
-              <option value="Indonesia">Indonesia</option>
-              <option value="Singapore">Singapore</option>
-              <option value="Malaysia">Malaysia</option>
-              <option value="Thailand">Thailand</option>
-              <option value="Vietnam">Vietnam</option>
-            </select>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Select Country</option>
+            <option value="1">Indonesia</option>
+            <option value="2">Malaysia</option>
+            <option value="3">Singapore</option>
+            <option value="4">Thailand</option>
+            <option value="3">Vietnam</option>
+            <option value="3">Myanmar</option>
+            <option value="3">Filipina</option>
+            <option value="3">Brunei Darussalam</option>
+            <option value="3">Laos</option>
+            <option value="3">Kamboja</option>
+          </select>
+          <div class="button">
+            <input class="btn" type="submit" value="Register" />
           </div>
         </form>
-        <div class="button">
-          <input type="submit" value="Register">
-        </div>
-      </form>
+      </div>
+      <p class="text-center">have an account? <a href="./login.html">Login here</a></p>
     </div>
-  </div>
 
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
