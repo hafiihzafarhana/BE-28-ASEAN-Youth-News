@@ -26,19 +26,19 @@
           <div class="user-details">
             <div class="input-box">
               <span class="details">Username</span>
-              <input type="text" placeholder="Enter your username" required />
+              <input type="text" placeholder="Enter your username" id="regist_username" required />
             </div>
             <div class="input-box">
               <span class="details">Email</span>
-              <input type="text" placeholder="Enter your email" required />
+              <input type="email" id="regist_email" placeholder="Enter your email" required />
             </div>
             <div class="input-box">
               <span class="details">Born</span>
-              <input type="date" placeholder="Enter your number" required />
+              <input type="date" id="regist_born" placeholder="Enter your number" required />
             </div>
             <div class="input-box">
               <span class="details">Password</span>
-              <input type="text" placeholder="Enter your password" required />
+              <input type="password" id="regist_password" placeholder="Enter your password" required />
             </div>
             <div class="mx-1 d-flex gap-2 flex-column">
               <span class="details">Gender</span>
@@ -47,10 +47,12 @@
                   <input
                     class="form-check-input bg-prima"
                     type="radio"
-                    name="flexRadioDefault"
-                    id="flexRadioDefault1"
+                    name="gender"
+                    id="Man"
+                    value="Man"
+                    checked
                   />
-                  <label class="form-check-label" for="flexRadioDefault1">
+                  <label class="form-check-label" for="Man">
                     Man
                   </label>
                 </div>
@@ -58,31 +60,32 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="flexRadioDefault"
-                    id="flexRadioDefault1"
+                    name="gender"
+                    id="Woman"
+                    value="Woman"
                   />
-                  <label class="form-check-label" for="flexRadioDefault1">
+                  <label class="form-check-label" for="Woman">
                     Woman
                   </label>
                 </div>
               </div>
             </div>
           </div>
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Select Country</option>
-            <option value="1">Indonesia</option>
-            <option value="2">Malaysia</option>
-            <option value="3">Singapore</option>
-            <option value="4">Thailand</option>
-            <option value="3">Vietnam</option>
-            <option value="3">Myanmar</option>
-            <option value="3">Filipina</option>
-            <option value="3">Brunei Darussalam</option>
-            <option value="3">Laos</option>
-            <option value="3">Kamboja</option>
+          <select class="form-select" aria-label="Default select example" id="regist_negara">
+            <option value="" selected>Select Country</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Vietnam">Vietnam</option>
+            <option value="Myanmar">Myanmar</option>
+            <option value="Filipina">Filipina</option>
+            <option value="Brunei Darussalam">Brunei Darussalam</option>
+            <option value="Laos">Laos</option>
+            <option value="Kamboja">Kamboja</option>
           </select>
           <div class="button">
-            <input class="btn" type="submit" value="Register" />
+            <input class="btn" type="submit" id="regist_btn" value="Register" />
           </div>
         </form>
       </div>
@@ -94,5 +97,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
+    <script src="./../script/script_register.js"></script>
   </body>
 </html>
