@@ -18,7 +18,7 @@ function userLogin(){
             datas.map((data) => {
                 if(data.username_user == login_input_username.value){
                     if(data.password == login_input_password.value){
-                        let dataUserMasuk = {username_user:data.username_user}
+                        let dataUserMasuk = {username_user:data.username_user, role:data.role_user}
                         login(dataUserMasuk);
                     }
                 }
