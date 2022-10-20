@@ -1,5 +1,11 @@
 // ===================================================== Reference ===========================================
 let pengguna_saat_ini = null;
+// ===============================================Validasi===================================================
+
+// Apakah field kosong?
+function kosong(str){
+    return str === "";
+}
 
 // ================================================== function handler ======================================
 
@@ -28,9 +34,7 @@ function logout(){
   }
 
 window.onload = function(e){
-    e.preventDefault()
     checkUserInWebStorage()
-    // update_artikel_like()
     if(pengguna_saat_ini != null){
         // hapus tombol login
         document.getElementById('btn_login').remove();

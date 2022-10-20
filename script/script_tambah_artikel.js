@@ -7,6 +7,15 @@ const tambah_isi = document.getElementById('tambah_isi');
 const tambah_gambar = document.getElementById('tambah_gambar');
 const tambah_btn = document.getElementById('tambah_btn');
 
+// =================================================validasi================================================
+function validasi_edit_artikel(){
+    if(kosong(tambah_judul.value) || kosong(tambah_penulis.value) || kosong(tambah_gambar.value) || kosong(tambah_kategori.value) || kosong(tambah_isi.value)){
+        alert('Tidak Boleh Kosong')
+        return false;
+    }
+    return true;
+}
+
 // ======================================================function============================================
 function generateSlug(text){
     return text.toString().toLowerCase()
@@ -19,6 +28,8 @@ function generateSlug(text){
 
 // ==================================================== EVent ===============================================
 tambah_btn.addEventListener('click',() => {
+    if(!validasi_edit_artikel()){ return }
+    else{
     fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/users')
         .then(subjek => subjek.json())
         .then(datas => {
@@ -39,14 +50,21 @@ tambah_btn.addEventListener('click',() => {
                 kategori_artikel:tambah_kategori.value
             }
 
-            console.log(JSON.stringify(data))
-
             fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel',{
                 method:"POST",
                 headers: {'Content-Type': 'application/json;charset=utf-8'},
                 body:JSON.stringify(data)
             })
+            .then(() => {
+                tambah_penulis.value = "";
+                tambah_gambar.value = "";
+                tambah_judul.value = "";
+                tambah_isi.value = "";
+                tambah_slug.value = "";
+                tambah_kategori.value = "";
+            })
         })
+    }
 })
 
 tambah_judul.addEventListener('keyup',(e) => {
