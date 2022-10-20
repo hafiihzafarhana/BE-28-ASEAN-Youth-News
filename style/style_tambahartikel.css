@@ -6,17 +6,12 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
-body{
-  background: #bcf5ba;
-  padding: 0 10px;
-}
+
 .wrapper{
     width: 100%;
     min-height: 50vh;
     overflow: hidden;
-    background: rgb(213, 242, 210);
     margin: 50px auto;
-  /*box-shadow: 2px 2px 4px rgba(169, 27, 27, 0.125);*/
     padding: 30px;
 }
 
@@ -24,7 +19,6 @@ body{
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #3a3f38;
   text-transform: uppercase;
   text-align: center;
 }
@@ -79,33 +73,26 @@ body{
   display: block;
   cursor: pointer;
 }
-.wrapper .form .inputfield .check input[type="checkbox"]{
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
 
 .wrapper .form .inputfield .btn{
-  width: 89%;
+  width: 50%;
   padding: 8px 10px;
   font-size: 15px;
   margin: 0 auto; 
   border: 0px;
-  background:  #3a3f38;
+  background:  #2AD401;
   color: #fff;
   cursor: pointer;
   border-radius: 10px;
   outline: none;
+  opacity: .8;
+  transition: 100;
 }
 
 .wrapper .form .inputfield .btn:hover{
-  background: rgb(164, 190, 164);
+  opacity: 1;
 }
 
-.wrapper .form .inputfield:last-child{
-  margin-bottom: 0;
-}
 
 @media (max-width:420px) {
   .wrapper .form .inputfield{

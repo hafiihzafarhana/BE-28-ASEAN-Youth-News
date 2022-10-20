@@ -27,8 +27,10 @@ function logout(){
     }
   }
 
-window.onload = function(){
+window.onload = function(e){
+    e.preventDefault()
     checkUserInWebStorage()
+    // update_artikel_like()
     if(pengguna_saat_ini != null){
         // hapus tombol login
         document.getElementById('btn_login').remove();
@@ -37,7 +39,13 @@ window.onload = function(){
         let drowdown_list = document.getElementById('drowdown_list');
         let hr_dropwdow = document.getElementById('hr_dropwdow')
         let elemen_tambah_artikel = document.createElement('li')
-        elemen_tambah_artikel.innerHTML = `<a class="dropdown-item" href="./public/tambah_artikel.html">Tambah Data</a>`
+        let lokasi = window.location.href
+        let loakasi_navigasi = lokasi.split('/')
+        if(loakasi_navigasi.length == 4){
+            elemen_tambah_artikel.innerHTML = `<a class="dropdown-item" href="./public/tambah_artikel.html">Tambah Data</a>`
+        } else{
+            elemen_tambah_artikel.innerHTML = `<a class="dropdown-item" href="./tambah_artikel.html">Tambah Data</a>`
+        }
         pengguna_saat_ini.role == 2 ? (drowdown_list.insertBefore(elemen_tambah_artikel, hr_dropwdow)) : ('')
 
         document.getElementById('logout').href="javascript:logout()";

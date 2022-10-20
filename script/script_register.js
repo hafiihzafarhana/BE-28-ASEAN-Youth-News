@@ -64,7 +64,7 @@ function userRegist(){
                 const ids = datas.map((e) => {
                     return e.id_user
                 })
-                const max = Math.max(...ids)
+                const max = Math.max(...ids);
                 const dataMasuk = {
                     role_user: 1,
                     created_at: new Date().toLocaleString(),
