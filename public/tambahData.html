@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="area" cols="30" rows="10"></textarea>
+    <button type="button" id="submit">SUbmit</button>
+    <p id="check"></p>
+    <script>
+        let area = document.getElementById('area');
+        let submit = document.getElementById('submit');
+
+        fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?id_artikel=1')
+            .then(subjek => subjek.json())
+            .then(data => area.innerHTML = data[0].isi)
+
+        // submit.addEventListener('click', () => {
+        //     let data = {
+        //         id_artikel:1,
+        //         created_at:"",
+        //         nama_penulis:"halo",
+        //         gambar_artikel:"",
+        //         judul_artikel:"halo",
+        //         like_artikel:[],
+        //         isi:area.value,
+        //         summary:"",
+        //         slug:"",
+        //         komentar:[]
+        //     }
+        //     fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel',{
+        //         method:"POST",
+        //         headers: {
+        //                 'Content-Type': 'application/json;charset=utf-8'
+        //               },
+        //         body:JSON.stringify(data)
+        //     })
+        // })
+    </script>
+</body>
+</html>
