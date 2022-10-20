@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper{
+    width: 100%;
+    min-height: 50vh;
+    overflow: hidden;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+.wrapper .title{
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.wrapper .form{
+  width: 100%;
+}
+
+.wrapper .form .inputfield{
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .form .inputfield label{
+   width: 300px;
+   color: #757575;
+   margin-right: 10px;
+   margin-left: 20px;
+  font-size: 14px;
+}
+.wrapper .form .inputfield .input,
+.wrapper .form .inputfield .textarea{
+  width: 70%;
+  outline: none;
+  border: 1px solid #d5dbd9;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.wrapper .form .inputfield .textarea{
+  width: 70%;
+  height: 125px;
+  resize: none;
+}
+.wrapper .form .inputfield .input:focus,
+.wrapper .form .inputfield .textarea:focus,
+.wrapper .form .inputfield .custom_select select:focus{
+  border: 1px solid #3f5a3f;
+}
+
+.wrapper .form .inputfield p{
+   font-size: 14px;
+   color: #757575;
+}
+.wrapper .form .inputfield .check{
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+.wrapper .form .inputfield .btn{
+  width: 50%;
+  padding: 8px 10px;
+  font-size: 15px;
+  margin: 0 auto; 
+  border: 0px;
+  background:  #2AD401;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+  opacity: .8;
+  transition: 100;
+}
+
+.wrapper .form .inputfield .btn:hover{
+  opacity: 1;
+}
+
+
+@media (max-width:420px) {
+  .wrapper .form .inputfield{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wrapper .form .inputfield label{
+    margin-bottom: 5px;
+  }
+  .wrapper .form .inputfield.terms{
+    flex-direction: row;
+  }
+}
