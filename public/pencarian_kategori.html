@@ -61,79 +61,25 @@
             </div>
     </header>
 
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Kategori</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Sosial</a>
-          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Kepemudaan</a>
-          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Bisnis</a>
-          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Kepemimpinan</a>
-        </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
+      <div class="offcanvas-body">
+        <a href="./pencarian_kategori.html?kategori=Sosial" class="m-2 d-inline-block btn bg-prima text-white">Sosial</a>
+        <a href="./pencarian_kategori.html?kategori=Kepemudaan" class="m-2 d-inline-block btn bg-prima text-white">Kepemudaan</a>
+        <a href="./pencarian_kategori.html?kategori=Bisnis" class="m-2 d-inline-block btn bg-prima text-white">Bisnis</a>
+        <a href="./pencarian_kategori.html?kategori=Kepemimpinan" class="m-2 d-inline-block btn bg-prima text-white">Kepemimpinan</a>
+      </div>
+    </div>
 
     <!-- Navbar end -->
     
     <main class="container mt-4">
-        <h3 class="text-center">Pencarian : Pemuda ASEAN</h3>
-        <div class="row mt-3">
-          <div class="col"></div>
-          <div class="col-9 konten-hal-cari shadow-sm p-3">
-            <div>
-              <img src="https://cdn-asset.jawapos.com/wp-content/uploads/2019/03/pemuda-indonesia-bentuk-komunitas-pelajar-asean-di-turki_m_.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="d-flex flex-column">
-              <a href="">
-                <p class="text-16px fw-bold">Pemuda ASEAN Membangung Organisasi ASEAN di Turkey</p>
-              </a>
-              <p>
-                Membangun organiasai ASEAN di Turkey tidaklah mudah. Butuh perjuangan ekstra
-              </p>
-              <p class="text-12px"><i>Minggu, 16 Oktober 2022 11:47</i></p>
-            </div>
-          </div>
-          <div class="col"></div>
-        </div>
+        <h3 class="text-center">Pencarian : <span id="keyword_kategori"></span></h3>
 
-        <div class="row mt-3">
-          <div class="col"></div>
-          <div class="col-9 konten-hal-cari shadow-sm p-3">
-            <div>
-              <img src="https://cdn-asset.jawapos.com/wp-content/uploads/2019/03/pemuda-indonesia-bentuk-komunitas-pelajar-asean-di-turki_m_.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="d-flex flex-column">
-              <a href="">
-                <p class="text-16px fw-bold">Pemuda ASEAN Membangung Organisasi ASEAN di Turkey</p>
-              </a>
-              <p>
-                Membangun organiasai ASEAN di Turkey tidaklah mudah. Butuh perjuangan ekstra
-              </p>
-              <p class="text-12px"><i>Minggu, 16 Oktober 2022 11:47</i></p>
-            </div>
-          </div>
-          <div class="col"></div>
-        </div>
-
-        <div class="row mt-3">
-          <div class="col"></div>
-          <div class="col-9 konten-hal-cari shadow-sm p-3">
-            <div>
-              <img src="https://cdn-asset.jawapos.com/wp-content/uploads/2019/03/pemuda-indonesia-bentuk-komunitas-pelajar-asean-di-turki_m_.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="d-flex flex-column">
-              <a href="">
-                <p class="text-16px fw-bold">Pemuda ASEAN Membangung Organisasi ASEAN di Turkey</p>
-              </a>
-              <p>
-                Membangun organiasai ASEAN di Turkey tidaklah mudah. Butuh perjuangan ekstra
-              </p>
-              <p class="text-12px"><i>Minggu, 16 Oktober 2022 11:47</i></p>
-            </div>
-          </div>
-          <div class="col"></div>
-        </div>
+        <div id="data_kategori"></div>
     </main>
 
     <!-- Footer -->
@@ -146,5 +92,6 @@
 
     <!-- script -->
     <script src="./../script/script_index.js"></script>
+    <script src="./../script/script_pencarian_kategori.js"></script>
   </body>
 </html>

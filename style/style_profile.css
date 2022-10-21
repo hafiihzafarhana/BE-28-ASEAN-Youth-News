@@ -1,0 +1,16 @@
+.image-profile{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+}
+
+.image-profile img{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+}

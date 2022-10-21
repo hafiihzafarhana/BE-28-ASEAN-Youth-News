@@ -35,6 +35,14 @@
     object-position: center;
 }
 
+.img-kategori{
+    min-width: 100%;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
 /* anchor */
 a{
     text-decoration: none;
