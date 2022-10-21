@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="./../Assets/icon/icon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -14,13 +13,11 @@
 
     <!-- style pribadi -->
     <link rel="stylesheet" href="./../styleKomponen/navbar.css">
-    <link rel="stylesheet" href="./../style/style_halaman_teratas.css">
     <link rel="stylesheet" href="./../styleKomponen/lay_img_typo.css">
-
-    <title>ASEAN Youth News | Artikel Teratas</title>
-  </head>
-  <body>
-
+    <link rel="stylesheet" href="./../style/style_profile.css">
+    <title>ASEAN Youth News</title>
+</head>
+<body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -38,7 +35,7 @@
           </div>
           <!-- warna : 2AD401 -->
           <a href="./login.html" class="btn btn-login text-white fw-bolder" id="btn_login">Login</a>
-
+  
           <div class="btn-group d-flex align-items-center justify-content-center" id="dropdow_profile">
             <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user text-24px"></i></button>
             <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start mt-2" id="drowdown_list">
@@ -75,76 +72,89 @@
     </div>
 
     <!-- Navbar end -->
-    
-    <main class="container mt-4">
-        <h3 class="text-center">Artikel Teratas</h3>
-        <div class="row mt-3">
-          <div class="col"></div>
-          <div class="col-9 konten-hal-teratas shadow-sm p-3">
-            <div>
-              <img src="https://cdn-asset.jawapos.com/wp-content/uploads/2019/03/pemuda-indonesia-bentuk-komunitas-pelajar-asean-di-turki_m_.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="d-flex flex-column">
-              <a href="">
-                <p class="text-16px fw-bold">Pemuda ASEAN Membangung Organisasi ASEAN di Turkey</p>
-              </a>
-              <p>
-                Membangun organiasai ASEAN di Turkey tidaklah mudah. Butuh perjuangan ekstra
-              </p>
-              <p class="text-12px"><i>Minggu, 16 Oktober 2022 11:47</i></p>
-            </div>
-          </div>
-          <div class="col"></div>
+
+    <!-- CONTENT START -->
+    <section>
+        <!-- .container start -->
+        <div class="container py-5">
+
+            <!-- .row start -->
+            <div class="row">
+
+                <!-- .col start -->
+                <div class="col-lg-4">
+
+                    <div class="card text-center p-5">
+
+                        <div class="card-body">
+                          <div class="image-profile">
+                            <img id="gambar_profil_img" src="https://th.bing.com/th/id/OIP.ybB2a0HimX1I-ybBY4pOPwHaHa?pid=ImgDet&rs=1" alt="Profil Picture" >
+                          </div>
+
+                            <h2 id="profile_tampil_username"></h2>
+
+                            <p class="card-text text-muted" id="profile_tampil_gender"></p>
+
+                        </div>
+                        <div class="row">
+                            <p class="card-text">
+                                <span class="text-muted mb-1 d-block" >Email</span>
+
+                                <i class="fa-solid fa-envelope me-2 text-success"></i> 
+                                <span id="profile_tampil_email"></span> 
+
+                            </p> <!-- alamat email end -->
+
+                            <p class="card-text">
+                                <span class="text-muted mb-1 d-block">Phone number</span>
+                                <i class="fa-solid fa-phone me-2 text-success"></i> 
+                                <span id="profile_tampil_number"></span>
+                            </p> <!-- nomor telepon end -->
+
+                            <a href="./profile.html" class="btn bg-prima text-white">
+                                <i class="fa-solid fa-pencil me-1"></i> profile settings
+                            </a>
+
+                            <a href="./data_user.html?aksi=liked" class="btn bg-light text-dark mt-3">
+                              <i class="fa-regular fa-thumbs-up"></i> Liked
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- .col end -->
+
+                <!-- .col start -->
+                <div class="col-lg-8">
+                  <div class="shadow border rounded p-5 mb-5">
+                    <h2>Liked Articles</h2>
+                    <!-- .row start -->
+                    <div class="row">
+                      <div class="col-md-4">
+                        d
+                      </div>
+                      <div class="col-md-4">
+                        d
+                      </div>
+                      <div class="col-md-4">
+                        d
+                      </div>
+                    </div>
+                  </div>
+                <!-- .col end -->
+                </div>
+            <!-- .row end -->
+
         </div>
+        <!-- .container end -->
 
-        <div class="row mt-3">
-          <div class="col"></div>
-          <div class="col-9 konten-hal-teratas shadow-sm p-3">
-            <div>
-              <img src="https://cdn-asset.jawapos.com/wp-content/uploads/2019/03/pemuda-indonesia-bentuk-komunitas-pelajar-asean-di-turki_m_.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="d-flex flex-column">
-              <a href="">
-                <p class="text-16px fw-bold">Pemuda ASEAN Membangung Organisasi ASEAN di Turkey</p>
-              </a>
-              <p>
-                Membangun organiasai ASEAN di Turkey tidaklah mudah. Butuh perjuangan ekstra
-              </p>
-              <p class="text-12px"><i>Minggu, 16 Oktober 2022 11:47</i></p>
-            </div>
-          </div>
-          <div class="col"></div>
-        </div>
-
-        <div class="row mt-3">
-          <div class="col"></div>
-          <div class="col-9 konten-hal-teratas shadow-sm p-3">
-            <div>
-              <img src="https://cdn-asset.jawapos.com/wp-content/uploads/2019/03/pemuda-indonesia-bentuk-komunitas-pelajar-asean-di-turki_m_.jpg" class="img-fluid" alt="">
-            </div>
-            <div class="d-flex flex-column">
-              <a href="">
-                <p class="text-16px fw-bold">Pemuda ASEAN Membangung Organisasi ASEAN di Turkey</p>
-              </a>
-              <p>
-                Membangun organiasai ASEAN di Turkey tidaklah mudah. Butuh perjuangan ekstra
-              </p>
-              <p class="text-12px"><i>Minggu, 16 Oktober 2022 11:47</i></p>
-            </div>
-          </div>
-          <div class="col"></div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="position-absolute bg-prima py-2 text-white fw-bolder mt-3" style="width: 100%;">
-      <p class="text-center">@ASEAN Youth News - 2022</p>
-    </footer>
-
+    </section>
+    <!-- CONTENT END -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <!-- script -->
     <script src="./../script/script_index.js"></script>
-  </body>
+    <script src="./../script/script_profile.js"></script>
+</body>
 </html>

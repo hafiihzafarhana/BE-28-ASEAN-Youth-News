@@ -14,6 +14,7 @@
     <!-- style pribadi -->
     <link rel="stylesheet" href="./../styleKomponen/navbar.css">
     <link rel="stylesheet" href="./../styleKomponen/lay_img_typo.css">
+    <link rel="stylesheet" href="./../style/style_profile.css">
     <title>ASEAN Youth News</title>
 </head>
 <body>
@@ -56,28 +57,28 @@
                 </div>
             </div>
     </header>
-  
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Kategori</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Sosial</a>
-          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Kepemudaan</a>
-          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Bisnis</a>
-          <a href="" class="m-2 d-inline-block btn bg-prima text-white">Kepemimpinan</a>
-        </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-  
+      <div class="offcanvas-body">
+        <a href="./pencarian_kategori.html?kategori=Sosial" class="m-2 d-inline-block btn bg-prima text-white">Sosial</a>
+        <a href="./pencarian_kategori.html?kategori=Kepemudaan" class="m-2 d-inline-block btn bg-prima text-white">Kepemudaan</a>
+        <a href="./pencarian_kategori.html?kategori=Bisnis" class="m-2 d-inline-block btn bg-prima text-white">Bisnis</a>
+        <a href="./pencarian_kategori.html?kategori=Kepemimpinan" class="m-2 d-inline-block btn bg-prima text-white">Kepemimpinan</a>
+      </div>
+    </div>
+
     <!-- Navbar end -->
 
     <!-- CONTENT START -->
     <section>
-        
+
         <!-- .container start -->
         <div class="container py-5">
-            
+
             <!-- .row start -->
             <div class="row">
 
@@ -87,34 +88,37 @@
                     <div class="card text-center p-5">
 
                         <div class="card-body">
+                          <div class="image-profile">
+                            <img id="gambar_profil_img" src="https://th.bing.com/th/id/OIP.ybB2a0HimX1I-ybBY4pOPwHaHa?pid=ImgDet&rs=1" alt="Profil Picture" >
+                          </div>
 
-                            <img src="https://i.etsystatic.com/9193132/r/il/f5ac46/1821668813/il_794xN.1821668813_il5b.jpg" alt="Profil Picture" class="img img-thumbnail rounded-circle w-50">
+                            <h2 id="profile_tampil_username"></h2>
 
-                            <h2>Corla</h2>
-
-                            <p class="card-text text-muted">
-                               Female
-                            </p>
+                            <p class="card-text text-muted" id="profile_tampil_gender"></p>
 
                         </div>
                         <div class="row">
                             <p class="card-text">
-                                <span class="text-muted mb-1 d-block">Email</span>
+                                <span class="text-muted mb-1 d-block" >Email</span>
 
-                                <i class="fa-solid fa-envelope me-2 text-success"></i> corlaunda@gmail.com 
+                                <i class="fa-solid fa-envelope me-2 text-success"></i> 
+                                <span id="profile_tampil_email"></span> 
 
                             </p> <!-- alamat email end -->
 
                             <p class="card-text">
                                 <span class="text-muted mb-1 d-block">Phone number</span>
-                                <i class="fa-solid fa-phone me-2 text-success"></i> +62 8210055-8122
+                                <i class="fa-solid fa-phone me-2 text-success"></i> 
+                                <span id="profile_tampil_number"></span>
                             </p> <!-- nomor telepon end -->
 
-                            <button class="btn btn-success btn-sm">
+                            <a href="./profile.html" class="btn bg-prima text-white">
                                 <i class="fa-solid fa-pencil me-1"></i> profile settings
-                            </button>
+                            </a>
 
-
+                            <a href="./data_user.html?aksi=liked" class="btn bg-light text-dark mt-3">
+                              <i class="fa-regular fa-thumbs-up"></i> Liked
+                            </a>
 
                         </div>
 
@@ -133,42 +137,36 @@
                         <div class="row">
 
                             <!-- .col start -->
-                            <div class="col-lg-6">
-
-                                <p class="card-text">
-                                    
-                                </p> <!-- alamat website end -->
-
-                            </div>
-                            <!-- .col end -->
-
-                            <!-- .col start -->
                             <div class="form">
-                                <img src="https://i.etsystatic.com/9193132/r/il/f5ac46/1821668813/il_794xN.1821668813_il5b.jpg" alt="Profil Picture" class="img img-thumbnail rounded-circle w-50">
+                                <input type="hidden" id="profile_no_id">
                                 <div class="mb-3">
-                                    <label for="formFileMultiple" class="form-label">Upload photo</label>
-                                    <input class="form-control" type="file" id="formFileMultiple" multiple>
-                                  </div>
+                                  <label for="profile_nama_depan" class="form-label">First Name</label>
+                                  <input type="text" class="form-control" id="profile_nama_depan" placeholder="First Name ...">
+                                </div>
                                 <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">username</label>
-                                    <input type="judul" class="form-control" id="exampleFormControlInput1" placeholder="username">
+                                  <label for="profile_nama_belakang" class="form-label">Last Name </label>
+                                  <input type="text" class="form-control" id="profile_nama_belakang" placeholder="Last Name ...">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="profile_foto" class="form-label">Photo</label>
+                                    <input class="form-control" type="text" id="profile_foto" placeholder="Photo ...">
                                   </div>
                                   <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">gender</label>
-                                    <input type="nama" class="form-control" id="exampleFormControlInput1" placeholder="gender">
-                                  </div> 
-                                  <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">email </label>
-                                    <input type="gambar" class="form-control" id="exampleFormControlInput1" placeholder="email">
+                                    <label for="profile_email" class="form-label">Email </label>
+                                    <input type="email" class="form-control" id="profile_email" placeholder="Email ...">
                                   </div>
                                   <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">phone number </label>
-                                    <input type="gambar" class="form-control" id="exampleFormControlInput1" placeholder="phone number">
+                                    <label for="profile_number" class="form-label">Number Phone </label>
+                                    <input type="text" class="form-control" id="profile_number" placeholder="Number Phone ...">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="profile_password" class="form-label">Password </label>
+                                    <input type="password" class="form-control" id="profile_password" placeholder="Password ...">
                                   </div>
 
-                                  <button class="btn btn-success btn-sm">
-                                    <i class="fa-solid fa-pencil me-1"></i> save
-                                </button>
+                                  <button type="button" id="profile_save_btn" class="btn bg-prima text-white">
+                                    Simpan
+                                  </button>
 
                         </div>
                         <!-- .row end -->
@@ -189,5 +187,6 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./../script/script_index.js"></script>
+    <script src="./../script/script_profile.js"></script>
 </body>
 </html>

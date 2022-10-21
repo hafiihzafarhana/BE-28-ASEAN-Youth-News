@@ -44,6 +44,8 @@ function validasi_edit_artikel(){
     return true;
 }
 
+// ================================================== function handler ======================================
+
 // periksa apakah ada data di local atau session
 function checkUserInWebStorage(){
     let check_user = localStorage.getItem('tetap_login');

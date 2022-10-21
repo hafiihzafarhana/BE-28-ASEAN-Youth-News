@@ -75,7 +75,10 @@ function userRegist(){
                     negara: regist_negara.value,
                     password: regist_password.value,
                     id_user: max + 1,
-                    fotoProfile_user: ""
+                    fotoProfile_user: "",
+                    number_user:"",
+                    email:regist_email.value,
+                    gender:regist_gender.value
                 }
                 fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/users',{
                     method:'POST',
@@ -84,7 +87,8 @@ function userRegist(){
                       },
                     body:JSON.stringify(dataMasuk)
                 })
-                .then(() => {
+                .then(subjek => subjek.json())
+                .then(() =>{
                     window.location.href = './login.html';
                 })
             })
