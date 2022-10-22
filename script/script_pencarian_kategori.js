@@ -3,28 +3,20 @@ const data_kategori = document.getElementById('data_kategori');
 
 // =========================================================function=======================================
 
-// ambil slug
-function getSlug(){
-    const queryUrl = window.location.search;
-    const urlParams = new URLSearchParams(queryUrl);
-    const getSlug = urlParams.get('kategori')
-    return getSlug;
-}
-
 // =====================================================fetch==============================================
 fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel')
     .then(subjek => subjek.json())
     .then(datas => {
-        document.getElementById('keyword_kategori').innerText=getSlug().toUpperCase();
+        document.getElementById('keyword_kategori').innerText=getSlug('kategori').toUpperCase();
         let ambilKategoriArtikel = [];
         let teks = '';
-        if(getSlug() == "terpopuler"){
+        if(getSlug('kategori') == "terpopuler"){
             let populer = datas.sort((a,b) => {
                 return b.komentar.length - a.komentar.length
             })
             ambilKategoriArtikel = populer;
         }
-        else if(getSlug() == "teratas"){
+        else if(getSlug('kategori') == "teratas"){
             let teratas = datas.sort((a,b) => {
                 return b.like_artikel.length - a.like_artikel.length
             })
@@ -32,7 +24,7 @@ fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel')
         }
         else{
             datas.map((e) => {
-                if(e.kategori_artikel == getSlug()){
+                if(e.kategori_artikel == getSlug('')){
                     ambilKategoriArtikel.push(e)
                 }
             })

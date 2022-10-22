@@ -7,28 +7,11 @@ const tambah_isi = document.getElementById('tambah_isi');
 const tambah_gambar = document.getElementById('tambah_gambar');
 const tambah_btn = document.getElementById('tambah_btn');
 
-// =================================================validasi================================================
-function validasi_edit_artikel(){
-    if(kosong(tambah_judul.value) || kosong(tambah_penulis.value) || kosong(tambah_gambar.value) || kosong(tambah_kategori.value) || kosong(tambah_isi.value)){
-        alert('Tidak Boleh Kosong')
-        return false;
-    }
-    return true;
-}
-
-// ======================================================function============================================
-function generateSlug(text){
-    return text.toString().toLowerCase()
-        .replace(/^-+/, '')
-        .replace(/-+$/, '')
-        .replace(/\s+/g, '-')
-        .replace(/\-\-+/g, '-')
-        .replace(/[^\w\-]+/g, '');
-}
-
 // ==================================================== EVent ===============================================
+orangBiasaDIlarangEdit("tambah");
+
 tambah_btn.addEventListener('click',() => {
-    if(!validasi_edit_artikel()){ return }
+    if(!validasi_edit_artikel(tambah_judul.value, tambah_penulis.value, tambah_gambar.value, tambah_kategori.value, tambah_isi.value)){ return }
     else{
     fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel')
         .then(subjek => subjek.json())
@@ -38,6 +21,11 @@ tambah_btn.addEventListener('click',() => {
             })
 
             const max = Math.max(...ids);
+
+            let slugNew = datas.filter(e => {
+                return (e.slug == tambah_slug.value);
+            })
+
             let data = {
                 id_artikel:max + 1,
                 created_at:new Date().toLocaleString(),
@@ -46,30 +34,10 @@ tambah_btn.addEventListener('click',() => {
                 judul_artikel:tambah_judul.value,
                 like_artikel:[],
                 isi:tambah_isi.value,
-                slug:tambah_slug.value,
+                slug: slugNew.length > 0 ? tambah_slug.value+'-'+Math.floor(Math.random() * (10000 - 1 + 1)) + 1 : tambah_slug.value,
                 komentar:[],
                 kategori_artikel:tambah_kategori.value
             }
-
-            datas.map((e) => {
-                if(e.slug.includes(tambah_slug.value) == true){
-                        console.log(tambah_slug.value+'-'+Math.floor(Math.random() * (10000 - 1 + 1)) + 1)
-                        data = {
-                            id_artikel:max + 1,
-                            created_at:new Date().toLocaleString(),
-                            nama_penulis:tambah_penulis.value,
-                            gambar_artikel:tambah_gambar.value,
-                            judul_artikel:tambah_judul.value,
-                            like_artikel:[],
-                            isi:tambah_isi.value,
-                            slug:tambah_slug.value+'-'+Math.floor(Math.random() * (10000 - 1 + 1)) + 1,
-                            komentar:[],
-                            kategori_artikel:tambah_kategori.value
-                        }
-
-                        return;
-                }
-            })
 
             fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel',{
                 method:"POST",

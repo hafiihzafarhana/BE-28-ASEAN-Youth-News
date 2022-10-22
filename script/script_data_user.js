@@ -7,55 +7,21 @@ const gambar_profil_img = document.getElementById('gambar_profil_img');
 const artikel_yang_dilike = document.getElementById('artikel_yang_dilike');
 
 const profile_kiri = document.getElementById('profile_kiri');
-pengguna_saat_ini = null;
 
 // ==================================================Validasi==============================================
-
 // ada beberap jenis orang yang tidak bisa masuk
-function orangBiasaDIlarangEdit(){
-    checkUserInWebStorage()
-    if(pengguna_saat_ini == null){
-        window.location.href = './../index.html';
-    }
-
-    if(pengguna_saat_ini.role == 2){
-        let a_dashboard = document.createElement('a');
-        a_dashboard.classList = "btn bg-light text-dark mt-3"
-        a_dashboard.href="./admin/dash_admin.html"
-        a_dashboard.innerHTML = `<i class="fa-solid fa-user-lock"></i> Admin`
-        profile_kiri.append(a_dashboard)
-    }
-}
-
-orangBiasaDIlarangEdit()
+orangBiasaDIlarangEdit("profile");
 
 // =================================================handler====================================================
 
-fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/users?username_user=${pengguna_saat_ini.username_user}`)
-    .then(subjek => subjek.json())
-    .then(data => {
-        profile_tampil_username.innerText = data[0].username_user;
-        profile_tampil_gender.innerText = data[0].gender;
-        profile_tampil_email.innerText = data[0].email
-        if(data[0].number_user != ""){
-            profile_tampil_number.innerText = data[0].number_user
-        } else{
-            profile_tampil_number.innerText = "Not Yet"
-        }
-
-        if(data[0].fotoProfile_user != ""){
-            gambar_profil_img.src=data[0].fotoProfile_user;
-        } else{
-            gambar_profil_img.src="https://th.bing.com/th/id/OIP.ybB2a0HimX1I-ybBY4pOPwHaHa?pid=ImgDet&rs=1";
-        }
-    })
+dataUser("profile_user")
 
 fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel')
     .then(subjek => subjek.json())
     .then(datas => {
         let azai = []
 
-        let dataLiked = datas.map(datas => datas.like_artikel.map(e => {
+        datas.map(datas => datas.like_artikel.map(e => {
             if(e.username_user.includes(pengguna_saat_ini.username_user) == true){
                 azai.push(datas)
             }
