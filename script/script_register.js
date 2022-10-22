@@ -61,6 +61,7 @@ function userRegist(){
             fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/users')
             .then(subjek => subjek.json())
             .then(datas => {
+                // username_user: "hafiihza"
                 const ids = datas.map((e) => {
                     return e.id_user
                 })
@@ -80,17 +81,25 @@ function userRegist(){
                     email:regist_email.value,
                     gender:regist_gender.value
                 }
-                fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/users',{
-                    method:'POST',
-                    headers: {
-                        'Content-Type': 'application/json;charset=utf-8'
-                      },
-                    body:JSON.stringify(dataMasuk)
+                datas.map((e) => {
+                    if(e.username_user.includes(regist_username.value) == true){
+                        alert("Username tidak boleh sama")
+                        return;
+                    } else{
+                        fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/users',{
+                            method:'POST',
+                            headers: {
+                                'Content-Type': 'application/json;charset=utf-8'
+                            },
+                            body:JSON.stringify(dataMasuk)
+                        })
+                        .then(subjek => subjek.json())
+                        .then(() =>{
+                            window.location.href = './login.html';
+                        })
+                    }
                 })
-                .then(subjek => subjek.json())
-                .then(() =>{
-                    window.location.href = './login.html';
-                })
+
             })
     }
 }

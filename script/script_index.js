@@ -1,5 +1,10 @@
 // ===================================================== Reference ===========================================
 let pengguna_saat_ini = null;
+const search_input_nav = document.getElementById('search_input_nav');
+const search_btn_nav = document.getElementById('search_btn_nav');
+const search_input_header = document.getElementById('search_input_header');
+const search_btn_header = document.getElementById('search_btn_header');
+
 // ===============================================Validasi===================================================
 
 // Apakah field kosong?
@@ -33,6 +38,13 @@ function logout(){
     }
   }
 
+  function checkLokasi(){
+    let lokasi = window.location.href
+    let loakasi_navigasi = lokasi.split('/')
+
+    return loakasi_navigasi.length;
+  }
+
 window.onload = function(e){
     checkUserInWebStorage()
     if(pengguna_saat_ini != null){
@@ -45,10 +57,10 @@ window.onload = function(e){
         let elemen_tambah_artikel = document.createElement('li')
         let lokasi = window.location.href
         let loakasi_navigasi = lokasi.split('/')
-        if(loakasi_navigasi.length == 4){
-            elemen_tambah_artikel.innerHTML = `<a class="dropdown-item" href="./public/tambah_artikel.html">Tambah Data</a>`
+        if(checkLokasi() == 4){
+            elemen_tambah_artikel.innerHTML = `<a class="dropdown-item" href="./public/tambah_artikel.html">Post Article</a>`
         } else{
-            elemen_tambah_artikel.innerHTML = `<a class="dropdown-item" href="./tambah_artikel.html">Tambah Data</a>`
+            elemen_tambah_artikel.innerHTML = `<a class="dropdown-item" href="./tambah_artikel.html">Post Article</a>`
         }
         pengguna_saat_ini.role == 2 ? (drowdown_list.insertBefore(elemen_tambah_artikel, hr_dropwdow)) : ('')
 
@@ -58,3 +70,19 @@ window.onload = function(e){
         document.getElementById('dropdow_profile').remove()
     }
 }
+
+search_btn_nav.addEventListener('click',() => {
+    if(checkLokasi() == 4){
+        window.location.href = `./public/pencarian_search.html?key=${search_input_nav.value}`
+    } else{
+        window.location.href = `./pencarian_search.html?key=${search_input_nav.value}`
+    }
+})
+
+search_btn_header.addEventListener('click',() => {
+    if(checkLokasi() == 4){
+        window.location.href = `./public/pencarian_search.html?key=${search_input_header.value}`
+    } else{
+        window.location.href = `./pencarian_search.html?key=${search_input_header.value}`
+    }
+})

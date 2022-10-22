@@ -20,58 +20,64 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" class="categories-btn">
-            <i class="fa-solid fa-bars"></i>
-            Categories
-          </a>
-          <div class="row">
-            <div class="col-md-12">
-                <input type="text" class="form-control input-search-nav" placeholder="Searching">
-                <a href="./../index.html">
-                    <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-nav" width="76">
-                </a>
-            </div>
-          </div>
-          <!-- warna : 2AD401 -->
-          <a href="./login.html" class="btn btn-login text-white fw-bolder" id="btn_login">Login</a>
-  
-          <div class="btn-group d-flex align-items-center justify-content-center" id="dropdow_profile">
-            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user text-24px"></i></button>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start mt-2" id="drowdown_list">
-              <li><a class="dropdown-item" href="./profile.html">Profile</a></li>
-              <li id="hr_dropwdow"><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" id="logout">Logout</a></li>
-            </ul>
-          </div>
+      <div class="container">
+        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" class="categories-btn">
+          <i class="fa-solid fa-bars"></i>
+          Categories
+        </a>
+        <div class="row">
+              <div class="input-search-nav">
+                <input type="text" class="form-control" placeholder="Searching ..." id="search_input_nav">
+                <button class="btn bg-prima text-white" id="search_btn_nav">Search</button>
+              </div>
+              <a href="./../index.html">
+                  <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-nav" width="76">
+              </a>
         </div>
-    </nav>
-    <header class="pt-4 shadow">
-        <div class="container">
-            <a href="./../index.html">
+        <!-- warna : 2AD401 -->
+        <a href="./login.html" class="btn btn-login text-white fw-bolder" id="btn_login">Login</a>
+
+        <div class="btn-group d-flex align-items-center justify-content-center" id="dropdow_profile">
+          <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user text-24px"></i></button>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start mt-2" id="drowdown_list">
+            <li><a class="dropdown-item" href="./profile.html">Profile</a></li>
+            <li id="hr_dropwdow"><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" id="logout">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+  </nav>
+  <header class="pt-4 shadow">
+      <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+                <a href="./../index.html">
                 <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-header mb-3" width="96">
-            </a>
-            <div class="row">
-                <div class="col-md-12">
-                    <input type="text" class="form-control input-search-header mb-4" placeholder="Searching">
-                </div>
+              </a>
             </div>
-    </header>
+          </div>
+            <div class="row">
+              <div class="input-search-header">
+                <input type="text" class="form-control mb-4" id="search_input_header" placeholder="Searching ...">
+                <button class="btn bg-prima text-white mb-4" id="search_btn_header">Search</button>
+              </div>
+          </div>
+  </header>
 
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <a href="./pencarian_kategori.html?kategori=Sosial" class="m-2 d-inline-block btn bg-prima text-white">Sosial</a>
-        <a href="./pencarian_kategori.html?kategori=Kepemudaan" class="m-2 d-inline-block btn bg-prima text-white">Kepemudaan</a>
-        <a href="./pencarian_kategori.html?kategori=Bisnis" class="m-2 d-inline-block btn bg-prima text-white">Bisnis</a>
-        <a href="./pencarian_kategori.html?kategori=Kepemimpinan" class="m-2 d-inline-block btn bg-prima text-white">Kepemimpinan</a>
-      </div>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+    <div class="offcanvas-body">
+      <a href="./pencarian_kategori.html?kategori=Sosial" class="m-2 d-inline-block btn bg-prima text-white">Sosial</a>
+      <a href="./pencarian_kategori.html?kategori=Kepemudaan" class="m-2 d-inline-block btn bg-prima text-white">Kepemudaan</a>
+      <a href="./pencarian_kategori.html?kategori=Bisnis" class="m-2 d-inline-block btn bg-prima text-white">Bisnis</a>
+      <a href="./pencarian_kategori.html?kategori=Kepemimpinan" class="m-2 d-inline-block btn bg-prima text-white">Kepemimpinan</a>
+    </div>
+  </div>
 
-    <!-- Navbar end -->
+  <!-- Navbar end -->
 
     <!-- CONTENT START -->
     <section>
@@ -97,7 +103,7 @@
                             <p class="card-text text-muted" id="profile_tampil_gender"></p>
 
                         </div>
-                        <div class="row">
+                        <div class="row" id="profile_kiri">
                             <p class="card-text">
                                 <span class="text-muted mb-1 d-block" >Email</span>
 

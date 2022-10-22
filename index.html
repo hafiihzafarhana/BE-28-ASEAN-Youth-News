@@ -29,12 +29,15 @@
             Categories
           </a>
           <div class="row">
-            <div class="col-md-12">
-                <input type="text" class="form-control input-search-nav" placeholder="Searching">
+            <!-- <div class="col-md-12"> -->
+                <div class="input-search-nav">
+                  <input type="text" class="form-control" placeholder="Searching ..." id="search_input_nav">
+                  <button class="btn bg-prima text-white" id="search_btn_nav">Search</button>
+                </div>
                 <a href="./index.html">
                   <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-nav" width="76">
                 </a>
-            </div>
+            <!-- </div> -->
           </div>
           <!-- warna : 2AD401 -->
           <a href="./public/login.html" class="btn btn-login text-white fw-bolder" id="btn_login">Login</a>
@@ -51,12 +54,17 @@
     </nav>
     <header class="pt-4 shadow">
         <div class="container">
-            <a href="./index.html">
-              <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-header mb-3" width="96">
-            </a>
             <div class="row">
-                <div class="col-md-12">
-                    <input type="text" class="form-control input-search-header mb-4" placeholder="Searching">
+              <div class="col-md-2">
+                <a href="./index.html">
+                <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-header mb-3" width="96">
+              </a>
+            </div>
+            </div>
+            <div class="row">
+                <div class="input-search-header">
+                  <input type="text" class="form-control mb-4" id="search_input_header" placeholder="Searching">
+                  <button class="btn bg-prima text-white mb-4" id="search_btn_header">Search</button>
                 </div>
             </div>
     </header>
@@ -85,26 +93,26 @@
 
               <!-- artikel lanjuta -->
               <div class="mt-3">
-                  <p class="text-24px fw-bold">Terpopuler</p>
+                  <p class="text-24px fw-bold">Popular</p>
                   <hr width="50%"/>
                   <div class="row" id="data_terpopuler_display"></div>
                   <p class="text-end mt-3">
-                    <a href="./public/pencarian_kategori.html?kategori=terpopuler">Lainya <i class="fa-solid fa-right-long"></i></a>
+                    <a href="./public/pencarian_kategori.html?kategori=terpopuler">More <i class="fa-solid fa-right-long"></i></a>
                   </p>
               </div>
 
               <div class="mt-3">
-                <p class="text-24px fw-bold">Teratas</p>
+                <p class="text-24px fw-bold">Top</p>
                 <hr width="50%"/>
                 <div class="row" id="data_teratas_display"></div>
                 <p class="text-end mt-3">
-                  <a href="./public/pencarian_kategori.html?kategori=teratas">Lainya <i class="fa-solid fa-right-long"></i></a>
+                  <a href="./public/pencarian_kategori.html?kategori=teratas">More <i class="fa-solid fa-right-long"></i></a>
                 </p>
             </div>
         </div>
         <!-- Sisi kanan -->
         <div class="kanan-main-halaman-utama shadow-sm p-3 f-flex flex-column">
-          <p class="text-24px fw-bold">Teratas</p>
+          <p class="text-24px fw-bold">Newest</p>
           <hr width="50%"/>
           <div class="row gap-2" id="data_terkini_display"></div>
         </div>
