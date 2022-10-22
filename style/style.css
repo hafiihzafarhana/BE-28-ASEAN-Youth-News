@@ -17,8 +17,8 @@
 
     .kanan-main-halaman-utama{
         width: 30%;
-        display: flex;
-        justify-content: end;
+        /* display: flex;
+        justify-content: end; */
     }
 
     .artikel-populer{
