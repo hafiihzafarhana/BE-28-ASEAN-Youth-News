@@ -5,7 +5,7 @@ const regist_born = document.getElementById('regist_born');
 const regist_password = document.getElementById('regist_password');
 const regist_btn = document.getElementById('regist_btn');
 const regist_negara = document.getElementById('regist_negara');
-const regist_gender = document.querySelector('input[name="gender"]:checked');
+const regist_gender = document.getElementById('regist_gender');
 const role = 1;
 let pengguna_saat_ini = null;
 
@@ -44,7 +44,12 @@ function Validasi(){
     }
 
     if(regist_negara.value == ""){
-        alert("Negara tidak boleh kosong")
+        alert("Negara tidak boleh kosong");
+        return false;
+    }
+
+    if(regist_gender.value == ""){
+        alert("Gender tidak boleh kosong");
         return false;
     }
 
@@ -65,6 +70,7 @@ function userRegist(){
                 const ids = datas.map((e) => {
                     return e.id_user
                 })
+
                 const max = Math.max(...ids);
                 const dataMasuk = {
                     role_user: 1,
@@ -81,25 +87,17 @@ function userRegist(){
                     email:regist_email.value,
                     gender:regist_gender.value
                 }
-                datas.map((e) => {
-                    if(e.username_user.includes(regist_username.value) == true){
-                        alert("Username tidak boleh sama")
-                        return;
-                    } else{
-                        fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/users',{
-                            method:'POST',
-                            headers: {
-                                'Content-Type': 'application/json;charset=utf-8'
-                            },
-                            body:JSON.stringify(dataMasuk)
-                        })
-                        .then(subjek => subjek.json())
-                        .then(() =>{
-                            window.location.href = './login.html';
-                        })
-                    }
-                })
 
+                fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/users',{
+                    method:'POST',
+                    headers: {
+                        'Content-Type': 'application/json;charset=utf-8'
+                    },
+                    body:JSON.stringify(dataMasuk)
+                    })
+                    .then(() =>{
+                        window.location.href = './login.html';
+                    })
             })
     }
 }

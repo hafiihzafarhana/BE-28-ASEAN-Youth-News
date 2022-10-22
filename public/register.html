@@ -41,52 +41,34 @@
               <span class="details">Password</span>
               <input type="password" id="regist_password" placeholder="Enter Password ..." required />
             </div>
-            <div class="mx-1 d-flex gap-2 flex-column">
+            <div class="input-box">
               <span class="details">Gender</span>
-              <div class="d-flex flex-row gap-2">
-                <div class="form-check">
-                  <input
-                    class="form-check-input bg-prima"
-                    type="radio"
-                    name="gender"
-                    id="Man"
-                    value="Man"
-                    checked
-                  />
-                  <label class="form-check-label" for="Man">
-                    Man
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="gender"
-                    id="Woman"
-                    value="Woman"
-                  />
-                  <label class="form-check-label" for="Woman">
-                    Woman
-                  </label>
-                </div>
-              </div>
+                <select class="form-select" aria-label="Default select example" id="regist_gender">
+                  <option value="" selected>Select Gender</option>
+                  <option value="Man">Man</option>
+                  <option value="Woman">Woman</option>
+                </select>
+            </div>
+
+            <div class="input-box">
+              <span class="details">Gender</span>
+              <select class="form-select" aria-label="Default select example" id="regist_negara">
+                <option value="" selected>Select Country</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Singapore">Singapore</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Vietnam">Vietnam</option>
+                <option value="Myanmar">Myanmar</option>
+                <option value="Filipina">Filipina</option>
+                <option value="Brunei Darussalam">Brunei Darussalam</option>
+                <option value="Laos">Laos</option>
+                <option value="Kamboja">Kamboja</option>
+              </select>
             </div>
           </div>
-          <select class="form-select" aria-label="Default select example" id="regist_negara">
-            <option value="" selected>Select Country</option>
-            <option value="Indonesia">Indonesia</option>
-            <option value="Malaysia">Malaysia</option>
-            <option value="Singapore">Singapore</option>
-            <option value="Thailand">Thailand</option>
-            <option value="Vietnam">Vietnam</option>
-            <option value="Myanmar">Myanmar</option>
-            <option value="Filipina">Filipina</option>
-            <option value="Brunei Darussalam">Brunei Darussalam</option>
-            <option value="Laos">Laos</option>
-            <option value="Kamboja">Kamboja</option>
-          </select>
-          <div class="button">
-            <input class="btn" type="submit" id="regist_btn" value="Register" />
+          <div class="button d-flex d-flex justify-content-center align-items-center">
+            <button class="btn bg-prima text-white" type="button" id="regist_btn">Register</button>
           </div>
         </form>
       </div>

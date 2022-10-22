@@ -36,7 +36,7 @@
         <div class="btn-group d-flex align-items-center justify-content-center" id="dropdow_profile">
           <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user text-24px"></i></button>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start mt-2" id="drowdown_list">
-            <li><a class="dropdown-item" href="./../profile.html">Profile</a></li>
+            <li><a class="dropdown-item" href="./profile.html">Profile</a></li>
             <li id="hr_dropwdow"><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" id="logout">Logout</a></li>
           </ul>
@@ -72,33 +72,48 @@
 
     <div class="wrapper shadow">
         <div class="title">
-          <h3 class="text-center">Dashboard Admin</h3>
+          <h3 class="text-center" id="nama_user">Users</h3>
           <div class="row d-flex gap-3 justify-content-center align-items-center p-4 flex-row">
-            <div class="card" style="width: 14rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Articles</h5>
-                    <a href="./dash_admin_artikel.html" class="btn bg-prima text-white">Come</a>
-                </div>
+            <div class="mb-3">
+                <label for="edit_first_name" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="edit_first_name" placeholder="Enter First Name ...">
             </div>
-
-            <div class="card" style="width: 14rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Users</h5>
-                    <a href=".dash_admin_user.html" class="btn bg-prima text-white">Come</a>
-                </div>
-                </div>
-          </div>
-
+            <div class="mb-3">
+                <label for="edit_last_name" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="edit_last_name" placeholder="Enter Last Name ...">
+            </div>
+            <div class="mb-3">
+                <label for="edit_username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="edit_username" placeholder="Enter Username ...">
+            </div>
+            <div class="mb-3">
+                <label for="edit_role_user">Role</label>
+                <select class="form-select" id="edit_role_user" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="created_at" class="form-label">Account Created</label>
+                <input type="text" class="form-control" id="created_at" disabled>
+            </div>
+            <div class="mb-3">
+                <label for="born" class="form-label">Born</label>
+                <input type="date" class="form-control" id="born">
+            </div>
+        </div>
         </div>
     </div>
 </section>
         <!-- Footer -->
-        <footer class="position-absolute bottom-0 bg-prima py-2 text-white fw-bolder mt-3" style="width: 100%;">
+        <footer class="position-absolute bg-prima py-2 text-white fw-bolder mt-3" style="width: 100%;">
             <p class="text-center">@ASEAN Youth News - 2022</p>
           </footer>
 
           <!-- Option 1: Bootstrap Bundle with Popper -->
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
           <script src="./../../script/admin/script_admin_index.js"></script>
+          <script src="./../../script/admin/script_admin_user.js"></script>
 </body>
 </html>

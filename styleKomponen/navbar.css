@@ -58,4 +58,10 @@ header{
     .img-header{
         display: none;
     }
+
+    .input-search-header{
+        display: flex;
+        gap: 12px;
+        width:100%;
+    }
 }
