@@ -1,25 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./../style/about_style.css">
-    <title>About Us</title>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/99d4b82606.js" crossorigin="anonymous"></script>
+
+    <!-- style pribadi -->
+    <link rel="stylesheet" href="./../styleKomponen/navbar.css">
+    <link rel="stylesheet" href="./../styleKomponen/lay_img_typo.css">
+    <title>ASEAN Youth News</title>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="row">
-            <div class="image-section">
-                <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" width="300" style="float:left; "alt="">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" class="categories-btn">
+            <i class="fa-solid fa-bars"></i>
+            Categories
+          </a>
+          <div class="row">
+                <div class="input-search-nav">
+                  <input type="text" class="form-control" placeholder="Searching ..." id="search_input_nav">
+                  <button class="btn bg-prima text-white" id="search_btn_nav">Search</button>
+                </div>
+                <a href="./../index.html">
+                    <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-nav" width="76">
+                </a>
+          </div>
+          <!-- warna : 2AD401 -->
+          <a href="./login.html" class="btn btn-login text-white fw-bolder" id="btn_login">Login</a>
+  
+          <div class="btn-group d-flex align-items-center justify-content-center" id="dropdow_profile">
+            <button type="button" class="btn dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user text-24px"></i></button>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start mt-2" id="drowdown_list">
+              <li><a class="dropdown-item" href="./profile.html">Profile</a></li>
+              <li id="hr_dropwdow"><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" id="logout">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    <header class="pt-4 shadow">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-2">
+                  <a href="./../index.html">
+                  <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-header mb-3" width="96">
+                </a>
+              </div>
             </div>
-            <div class="content">
-                <center><h2>About Us</h2></center>
-                <h2>ASEAN Youth Forum (AYF) </h2> 
+              <div class="row">
+                <div class="input-search-header">
+                  <input type="text" class="form-control mb-4" id="search_input_header" placeholder="Searching ...">
+                  <button class="btn bg-prima text-white mb-4" id="search_btn_header">Search</button>
+                </div>
+            </div>
+    </header>
+  
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <a href="./pencarian_kategori.html?kategori=Sosial" class="m-2 d-inline-block btn bg-prima text-white">Sosial</a>
+        <a href="./pencarian_kategori.html?kategori=Kepemudaan" class="m-2 d-inline-block btn bg-prima text-white">Kepemudaan</a>
+        <a href="./pencarian_kategori.html?kategori=Bisnis" class="m-2 d-inline-block btn bg-prima text-white">Bisnis</a>
+        <a href="./pencarian_kategori.html?kategori=Kepemimpinan" class="m-2 d-inline-block btn bg-prima text-white">Kepemimpinan</a>
+        <hr/>
+        <a href="./about.html" class="btn btn-dark">About Us</a>
+      </div>
+    </div>
+
+    <!-- Navbar end -->
+    <div class="container mt-3">
+        <div class="row justify-content-center d-flex align-items-center">
+            <div class="col-md-6">
+                <img src="./../Assets/imgtemp/undraw.svg" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-6">
+                <h2>About Us</h2>
+                <h2>ASEAN Youth Forum (AYF) </h2>
                 <p>Sebuah gerakan yang mewakili dan memperjuangkan generasi muda di ASEAN untuk menyuarakan keprihatinan dan strategi mereka untuk mencapai ASEAN yang lebih baik. AYF telah menjadi platform pemuda di ASEAN untuk menyuarakan dan menuntut hak-hak mereka untuk komunitas regional yang berkelanjutan, inklusif, berpusat pada orang, dan digerakkan oleh pemuda. Jaringan tersebut bertujuan untuk melembagakan dan mendirikan cabang-cabang nasionalnya untuk memfokuskan keterlibatan pada isu-isu lokal yang penting dan tepat waktu yang mempengaruhi kaum muda, dan mengkonsolidasikan proposal dan agenda kebijakan untuk diajukan ke kantor-kantor ASEAN yang relevan.</p>
 
             </div>
         </div>
     </div>
+    <footer class="position-absolute bg-prima py-2 text-white fw-bolder mt-3" style="width: 100%;">
+        <p class="text-center">@ASEAN Youth News - 2022</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./../script/script_index.js"></script>
 </body>
 </html>

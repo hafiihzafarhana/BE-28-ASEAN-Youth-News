@@ -5,6 +5,8 @@ const profile_tampil_email = document.getElementById('profile_tampil_email');
 const profile_tampil_number = document.getElementById('profile_tampil_number');
 const gambar_profil_img = document.getElementById('gambar_profil_img');
 const artikel_yang_dilike = document.getElementById('artikel_yang_dilike');
+
+const profile_kiri = document.getElementById('profile_kiri');
 pengguna_saat_ini = null;
 
 // ==================================================Validasi==============================================
@@ -14,6 +16,14 @@ function orangBiasaDIlarangEdit(){
     checkUserInWebStorage()
     if(pengguna_saat_ini == null){
         window.location.href = './../index.html';
+    }
+
+    if(pengguna_saat_ini.role == 2){
+        let a_dashboard = document.createElement('a');
+        a_dashboard.classList = "btn bg-light text-dark mt-3"
+        a_dashboard.href="./admin/dash_admin.html"
+        a_dashboard.innerHTML = `<i class="fa-solid fa-user-lock"></i> Admin`
+        profile_kiri.append(a_dashboard)
     }
 }
 
