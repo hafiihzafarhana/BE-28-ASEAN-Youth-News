@@ -30,7 +30,6 @@ function orangBiasaDIlarangEdit(){
         a_dashboard.classList = "btn bg-light text-dark mt-3"
         a_dashboard.href="./admin/dash_admin.html"
         a_dashboard.innerHTML = `<i class="fa-solid fa-user-lock"></i> Admin`
-        console.log(a_dashboard)
         profile_kiri.append(a_dashboard)
     }
 }
