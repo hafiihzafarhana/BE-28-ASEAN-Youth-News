@@ -24,7 +24,9 @@
 }
 
 .input-search-nav{
-    display: block;
+    display: flex;
+    gap: 12px;
+    width:100%;
 }
 
 /* AKhir Navigasi */
@@ -55,9 +57,5 @@ header{
 
     .img-header{
         display: none;
-    }
-
-    .input-search-header{
-        display: block;
     }
 }

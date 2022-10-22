@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="./../Assets/icon/icon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -13,13 +12,11 @@
     <script src="https://kit.fontawesome.com/99d4b82606.js" crossorigin="anonymous"></script>
 
     <!-- style pribadi -->
-    <link rel="stylesheet" href="./../styleKomponen/navbar.css">
-    <link rel="stylesheet" href="./../style/style_halaman_cari.css">
-    <link rel="stylesheet" href="./../styleKomponen/lay_img_typo.css">
-
-    <title>ASEAN Youth News | Pencarian</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="./../../styleKomponen/navbar.css">
+    <link rel="stylesheet" href="./../../styleKomponen/lay_img_typo.css">
+    <title>ASEAN Youth News</title>
+</head>
+<body>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,11 +26,7 @@
           Categories
         </a>
         <div class="row">
-              <div class="input-search-nav">
-                <input type="text" class="form-control" placeholder="Searching ..." id="search_input_nav">
-                <button class="btn bg-prima text-white" id="search_btn_nav">Search</button>
-              </div>
-              <a href="./../index.html">
+              <a href="./../../index.html">
                   <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-nav" width="76">
               </a>
         </div>
@@ -50,20 +43,14 @@
         </div>
       </div>
   </nav>
-  <header class="pt-4 shadow">
+  <header class="pt-4 shadow img-header ">
       <div class="container">
           <div class="row">
             <div class="col-md-2">
-                <a href="./../index.html">
-                <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="img-header mb-3" width="96">
+                <a href="./../../index.html">
+                <img src="https://1.bp.blogspot.com/-0nNRvyl7g6w/XKMMdKVPTeI/AAAAAAAACYI/6q19SNiO0Xs7zFt3rOE18sM95NmChwdywCLcBGAs/s1600/cropped-Logo-Asean-Youth-Forum-HR-01.png" alt="" class="mb-3" width="96">
               </a>
             </div>
-          </div>
-            <div class="row">
-              <div class="input-search-header">
-                <input type="text" class="form-control mb-4" id="search_input_header" placeholder="Searching ...">
-                <button class="btn bg-prima text-white mb-4" id="search_btn_header">Search</button>
-              </div>
           </div>
   </header>
 
@@ -81,23 +68,39 @@
   </div>
 
   <!-- Navbar end -->
-    
-    <main class="container mt-4">
-        <h3 class="text-center">Pencarian : <span id="keyword_cari"></span></h3>
 
-        <div id="data_cari"></div>
-    </main>
+    <section class="Form my-5 mx-6">
+     <div class="container">
 
-    <!-- Footer -->
-    <footer class="position-absolute bottom-0 bg-prima py-2 text-white fw-bolder mt-3" style="width: 100%;">
-      <p class="text-center">@ASEAN Youth News - 2022</p>
-    </footer>
+    <div class="wrapper shadow">
+        <div class="title">
+          <h3 class="text-center">Dashboard Admin</h3>
+          <div class="row d-flex gap-3 justify-content-center align-items-center p-4 flex-row">
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Articles</h5>
+                    <a href="./dash_admin_artikel.html" class="btn bg-prima text-white">Come</a>
+                </div>
+            </div>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+            <div class="card" style="width: 14rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Users</h5>
+                    <a href=".dash_admin_user.html" class="btn bg-prima text-white">Come</a>
+                </div>
+                </div>
+          </div>
 
-    <!-- script -->
-    <script src="./../script/script_index.js"></script>
-    <script src="./../script/script_pencarian_kategori.js"></script>
-  </body>
+        </div>
+    </div>
+</section>
+        <!-- Footer -->
+        <footer class="position-absolute bottom-0 bg-prima py-2 text-white fw-bolder mt-3" style="width: 100%;">
+            <p class="text-center">@ASEAN Youth News - 2022</p>
+          </footer>
+
+          <!-- Option 1: Bootstrap Bundle with Popper -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+          <script src="./../../script/admin/script_admin_index.js"></script>
+</body>
 </html>

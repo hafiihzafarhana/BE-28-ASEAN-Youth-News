@@ -8,6 +8,11 @@ const edit_isi = document.getElementById('edit_isi');
 const edit_gambar = document.getElementById('edit_gambar');
 const edit_btn = document.getElementById('edit_btn');
 
+const search_input_nav = document.getElementById('search_input_nav');
+const search_btn_nav = document.getElementById('search_btn_nav');
+const search_input_header = document.getElementById('search_input_header');
+const search_btn_header = document.getElementById('search_btn_header');
+
 // ======================================================function============================================
 function generateSlug(text){
     return text.toString().toLowerCase()
@@ -99,12 +104,35 @@ window.onload = function(e){
     }
 }
 
+search_btn_nav.addEventListener('click',() => {
+    if(checkLokasi() == 4){
+        window.location.href = `./public/pencarian_search.html?key=${search_input_nav.value}`
+    } else{
+        window.location.href = `./pencarian_search.html?key=${search_input_nav.value}`
+    }
+})
+
+search_btn_header.addEventListener('click',() => {
+    if(checkLokasi() == 4){
+        window.location.href = `./public/pencarian_search.html?key=${search_input_header.value}`
+    } else{
+        window.location.href = `./pencarian_search.html?key=${search_input_header.value}`
+    }
+})
+
 function getSlug(){
     const queryUrl = window.location.search;
     const urlParams = new URLSearchParams(queryUrl);
     const getSlug = urlParams.get('slug')
     return getSlug;
 }
+
+function checkLokasi(){
+    let lokasi = window.location.href
+    let loakasi_navigasi = lokasi.split('/')
+
+    return loakasi_navigasi.length;
+  }
 
 function ambil_data(){
 fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}`)
@@ -137,10 +165,10 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}
         fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel/${document.getElementById('id_artikel').value}`,{
             method:"PUT",
             headers: {'Content-Type': 'application/json;charset=utf-8'},
-            // body:JSON.stringify(data)
+            body:JSON.stringify(data)
         })
             .then(() => {
-                // window.location.href = `./detail_artikel.html?slug=${getSlug()}`;
+                window.location.href = `./detail_artikel.html?slug=${edit_slug.value}`;
             })
         }
     })
