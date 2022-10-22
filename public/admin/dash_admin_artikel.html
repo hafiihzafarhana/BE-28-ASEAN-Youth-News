@@ -72,33 +72,39 @@
 
     <div class="wrapper shadow">
         <div class="title">
-          <h3 class="text-center">Dashboard Admin</h3>
+          <h3 class="text-center">Articles</h3>
           <div class="row d-flex gap-3 justify-content-center align-items-center p-4 flex-row">
-            <div class="card" style="width: 14rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Articles</h5>
-                    <a href="./dash_admin_artikel.html" class="btn bg-prima text-white">Come</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 14rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Users</h5>
-                    <a href=".dash_admin_user.html" class="btn bg-prima text-white">Come</a>
-                </div>
-                </div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Number</th>
+                    <th scope="col">Articles</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="data_table_admin">
+                  <!-- <tr>
+                    <th scope="row">1</th>
+                    <td></td>
+                    <td>
+                        <a href="" class="btn btn-warning badge">Edit</a>
+                        <a href="" class="btn btn-danger badge">Delete</a>
+                    </td>
+                  </tr> -->
+                </tbody>
+              </table>
           </div>
-
         </div>
     </div>
 </section>
         <!-- Footer -->
-        <footer class="position-absolute bottom-0 bg-prima py-2 text-white fw-bolder mt-3" style="width: 100%;">
+        <footer class="position-absolute bg-prima py-2 text-white fw-bolder mt-3" style="width: 100%;">
             <p class="text-center">@ASEAN Youth News - 2022</p>
           </footer>
 
           <!-- Option 1: Bootstrap Bundle with Popper -->
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
           <script src="./../../script/admin/script_admin_index.js"></script>
+          <script src="./../../script/admin/script_admin_artikel.js"></script>
 </body>
 </html>
