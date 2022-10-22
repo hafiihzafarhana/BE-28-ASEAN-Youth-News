@@ -1,21 +1,13 @@
 // ============================================Reference================================================
 const data_cari = document.getElementById('data_cari');
 
-// ambil slug
-function getSlug(){
-    const queryUrl = window.location.search;
-    const urlParams = new URLSearchParams(queryUrl);
-    const getSlug = urlParams.get('key')
-    return getSlug;
-}
-
 // =====================================================fetch==============================================
-fetch(encodeURI(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?judul_artikel=${getSlug()}`))
+fetch(encodeURI(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?judul_artikel=${getSlug('key')}`))
     .then(subjek => subjek.json())
     .then(datas => {
         document.getElementById('keyword_kategori').innerText=getSlug().toUpperCase();
         let teks = '';
-        if(getSlug() != ""){
+        if(getSlug('key') != ""){
         datas.map((e) => {
             teks += 
                 `
