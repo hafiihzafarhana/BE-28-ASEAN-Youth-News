@@ -24,7 +24,7 @@ fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel')
         }
         else{
             datas.map((e) => {
-                if(e.kategori_artikel == getSlug('')){
+                if(e.kategori_artikel == getSlug('kategori')){
                     ambilKategoriArtikel.push(e)
                 }
             })
