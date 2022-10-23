@@ -125,11 +125,13 @@ function userRegist(){
                     })
                     .then(() =>{
                         Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Your account has been registered !',
+                            title: "Good job!",
+                            text: "Success adding your account !",
+                            icon: "success",
                         })
-                        window.location.href = './login.html';
+                        .then(() => {
+                            window.location.href = './login.html';
+                        })
                     })
 
                 } else{
