@@ -32,26 +32,47 @@ function Validasi(){
     let number_regex = /^[0-9]{10,}$/;
     if(kosong(profile_nama_depan.value) || kosong(profile_nama_belakang.value) || kosongAtauAdaSpasi(profile_email.value) || kosongAtauAdaSpasi(profile_number.value) || kosong(profile_password.value)){
         alert("Tidak Boleh Kosong atau ada spasi");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Should not be empty !',
+        })
         return false;
     }
 
     if(!nama_regex.test(profile_nama_depan.value) || !nama_regex.test(profile_nama_belakang.value)){
-        alert('Format nama salah. Harus abc / ABC / 0-9')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'The username format is incorrect. Valid format: abc/ABC/123 !',
+        })
         return false;
     }
 
     if(!password_regex.test(profile_password.value)){
-        alert('Password tidak boleh kurang dari 8 karakter')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'The password must be greater than equal to 8 characters !',
+        })
         return false;
     }
 
     if(!email_regex.test(profile_email.value)){
-        alert('Format email salah. Harus abc / ABC / 123@gmail.com')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'The email format is incorrect. Valid format: abc/ABC/123@gmail.com !',
+        })
         return false;
     }
 
     if(!number_regex.test(profile_number.value)){
-        alert("Nomor harus angka")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Must Number !',
+        })
         return false;
     }
 
@@ -74,7 +95,7 @@ function edit_profile(){
             fotoProfile_user:profile_foto.value,
             email:profile_email.value,
             number_user:profile_number.value,
-            password:profile_password.value
+            password:enkripsi_password(profile_password.value)
         }
         let encoded = encodeURI(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/users/${profile_no_id.value}`);
         fetch(encoded,{
@@ -86,9 +107,20 @@ function edit_profile(){
         })
         .then(subjek => subjek.json())
         .then(data => {
-            profile_tampil_number.innerHTML = data.number_user;
-            profile_tampil_email.innerHTML = data.email;
-            gambar_profil_img.src=data.fotoProfile_user;
+            Swal.fire({
+                title: "Good job!",
+                text: "Your data updated!",
+                icon: "success",
+            })
+            .then(() => {
+                profile_tampil_number.innerHTML = data.number_user;
+                profile_tampil_email.innerHTML = data.email;
+                if(data.fotoProfile_user == ""){
+                    gambar_profil_img.src="https://th.bing.com/th/id/OIP.ybB2a0HimX1I-ybBY4pOPwHaHa?pid=ImgDet&rs=1";
+                } else{
+                    gambar_profil_img.src=data.fotoProfile_user;
+                }
+            })
         })
     }
 }

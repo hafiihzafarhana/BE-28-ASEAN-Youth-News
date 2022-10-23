@@ -21,7 +21,7 @@ fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel')
     .then(datas => {
         let azai = []
 
-        datas.map(datas => datas.like_artikel.map(e => {
+        datas.filter(datas => datas.like_artikel.map(e => {
             if(e.username_user.includes(pengguna_saat_ini.username_user) == true){
                 azai.push(datas)
             }
@@ -42,6 +42,6 @@ fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel')
             </div>
         `;
         })
-
         artikel_yang_dilike.innerHTML = teks1
+
     })

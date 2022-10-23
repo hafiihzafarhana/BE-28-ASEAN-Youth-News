@@ -30,7 +30,7 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/users/${getId()}`)
         created_at.value = data.created_at;
         edit_born.value = data.tanggal_lahir;
         edit_negara_user.value = data.negara;
-        edit_password.value = data.password;
+        edit_password.value = deskripsi_password(data.password);
         edit_email.value = data.email;
         edit_foto_profile.value = data.fotoProfile_user
     })
@@ -45,7 +45,7 @@ function updateSaved(){
         gender:edit_gender.value,
         tanggal_lahir:edit_born.value,
         negara:edit_negara_user.value,
-        password:edit_password.value,
+        password:enkripsi_password(edit_password.value),
         email:edit_email.value,
         fotoProfile_user:edit_foto_profile.value
     }

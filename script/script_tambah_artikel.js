@@ -45,12 +45,19 @@ tambah_btn.addEventListener('click',() => {
                 body:JSON.stringify(data)
             })
             .then(() => {
-                tambah_penulis.value = "";
-                tambah_gambar.value = "";
-                tambah_judul.value = "";
-                tambah_isi.value = "";
-                tambah_slug.value = "";
-                tambah_kategori.value = "";
+                Swal.fire({
+                    title: "Good job!",
+                    text: "Data was uploaded !",
+                    icon: "success",
+                })
+                .then(() => {
+                    tambah_penulis.value = "";
+                    tambah_gambar.value = "";
+                    tambah_judul.value = "";
+                    tambah_isi.value = "";
+                    tambah_slug.value = "";
+                    tambah_kategori.value = "";
+                })
             })
         })
     }

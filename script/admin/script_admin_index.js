@@ -20,6 +20,18 @@ function checkUserInWebStorage(){
     }
 }
 
+function deskripsi_password(db_pass){
+    let check = "eZd?k5Prmc%RZCwPA4tTg2QUE*DfzuUpwC&sTQMU%ka+%XHQP#vT2pMh3B+?FYX?n-BrJ"
+    var pass12 = CryptoJS.AES.decrypt(db_pass,check);
+    return pass12.toString(CryptoJS.enc.Utf8);
+  }
+
+  function enkripsi_password(pass){
+    let check = "eZd?k5Prmc%RZCwPA4tTg2QUE*DfzuUpwC&sTQMU%ka+%XHQP#vT2pMh3B+?FYX?n-BrJ"
+    var pass12 = CryptoJS.AES.encrypt(pass,check);
+    return pass12.toString()
+  }
+
 // User ketika ingin logout
 function logout(){
     sessionStorage.removeItem("dataUser");

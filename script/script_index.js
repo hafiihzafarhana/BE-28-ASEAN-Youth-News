@@ -31,11 +31,18 @@ function logout(){
     localStorage.removeItem("tetap_login");
     let lokasi = window.location.href
     let loakasi_navigasi = lokasi.split('/')
-    if(loakasi_navigasi.length == 4){
-        window.location = "./index.html";
-    } else{
-        window.location = './../index.html'
-    }
+    Swal.fire({
+        title: "Good job!",
+        text: "You was lpgout !",
+        icon: "success",
+    })
+    .then(() => {
+        if(loakasi_navigasi.length == 4){
+            window.location = "./index.html";
+        } else{
+            window.location = './../index.html'
+        }
+    })
   }
 
   function checkLokasi(){
@@ -125,38 +132,42 @@ function orangBiasaDIlarangEdit(halaman=""){
 
 function validasi_edit_artikel(judul, penulis, gambar_artikel, kategori, isi){
     if(kosong(judul) || kosong(penulis) || kosong(gambar_artikel) || kosong(kategori) || kosong(isi)){
-        alert('Tidak Boleh Kosong')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Should not be empty !',
+        })
         return false;
     }
     return true;
 }
 
 function dataUser(posisi){
-    fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/users?username_user=${pengguna_saat_ini.username_user}`)
+    fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/users/${pengguna_saat_ini.id_user}`)
     .then(subjek => subjek.json())
     .then(data => {
-        profile_tampil_username.innerText = data[0].username_user;
-        profile_tampil_gender.innerText = data[0].gender;
-        profile_tampil_email.innerText = data[0].email
-        if(data[0].number_user != ""){
-            profile_tampil_number.innerText = data[0].number_user
+        profile_tampil_username.innerText = data.username_user;
+        profile_tampil_gender.innerText = data.gender;
+        profile_tampil_email.innerText = data.email
+        if(data.number_user != ""){
+            profile_tampil_number.innerText = data.number_user
         } else{
             profile_tampil_number.innerText = "Not Yet"
         }
 
-        if(data[0].fotoProfile_user != ""){
-            gambar_profil_img.src=data[0].fotoProfile_user;
+        if(data.fotoProfile_user != ""){
+            gambar_profil_img.src=data.fotoProfile_user;
         } else{
             gambar_profil_img.src="https://th.bing.com/th/id/OIP.ybB2a0HimX1I-ybBY4pOPwHaHa?pid=ImgDet&rs=1";
         }
         if(posisi != "profile_user"){
-            profile_nama_depan.value = data[0].namaDepan_user;
-            profile_nama_belakang.value = data[0].namaBelakang_user;
-            profile_foto.value = data[0].fotoProfile_user;
-            profile_email.value = data[0].email;
-            profile_number.value = data[0].number_user;
-            profile_no_id.value = data[0].id_user;
-            profile_password.value = data[0].password
+            profile_nama_depan.value = data.namaDepan_user;
+            profile_nama_belakang.value = data.namaBelakang_user;
+            profile_foto.value = data.fotoProfile_user;
+            profile_email.value = data.email;
+            profile_number.value = data.number_user;
+            profile_no_id.value = data.id_user;
+            profile_password.value = deskripsi_password(data.password)
         }
     })
 }
@@ -254,4 +265,16 @@ function getSlug(ambil) {
     const urlParams = new URLSearchParams(queryUrl);
     const getSlug = urlParams.get(ambil);
     return getSlug;
+  }
+
+  function deskripsi_password(db_pass){
+    let check = "eZd?k5Prmc%RZCwPA4tTg2QUE*DfzuUpwC&sTQMU%ka+%XHQP#vT2pMh3B+?FYX?n-BrJ"
+    var pass12 = CryptoJS.AES.decrypt(db_pass,check);
+    return pass12.toString(CryptoJS.enc.Utf8);
+  }
+
+  function enkripsi_password(pass){
+    let check = "eZd?k5Prmc%RZCwPA4tTg2QUE*DfzuUpwC&sTQMU%ka+%XHQP#vT2pMh3B+?FYX?n-BrJ"
+    var pass12 = CryptoJS.AES.encrypt(pass,check);
+    return pass12.toString()
   }
