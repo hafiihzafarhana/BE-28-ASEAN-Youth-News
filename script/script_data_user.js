@@ -31,7 +31,7 @@ fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel')
         azai.map((e) => {
             teks1 += `
             <div class="col-md-4">
-                <a href="./public/detail_artikel.html?slug=${e.slug}">
+                <a href="./detail_artikel.html?slug=${e.slug}">
                     <div class="card" style="width: 100%;">
                         <img src="${e.gambar_artikel}" class="img-zi" alt="...">
                         <div class="card-body">
