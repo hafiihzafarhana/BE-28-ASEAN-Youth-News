@@ -21,7 +21,7 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel/?slug=${getSlug('
             <div class="d-flex">
                 <button class="btn" onClick="edit_data('${detail.id_artikel}')" id="untukLike"><i class="fa-solid fa-thumbs-up"></i> <span id="jumlah_likenya">${detail.like_artikel.length}</span>
                 </button>
-                <button class="btn"><i class="fa-solid fa-share"></i></button>
+                
 
                 <div class="btn-group d-flex align-items-center justify-content-center" id="dropdow_profile">
                 ${(pengguna_saat_ini?.role == 2 ? (`<button type="button" class="btn dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>`) : (``))}
@@ -48,7 +48,7 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel/?slug=${getSlug('
                             </div>
                             <p>"${e.isiKomen}"</p>
                         </div>`)
-                    )}
+                    ).join('')}
                 </div>
                 <div class="mt-3">
                     <div class="form-floating">
