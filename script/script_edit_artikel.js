@@ -68,7 +68,14 @@ edit_btn.addEventListener("click", () => {
             body: JSON.stringify(data),
           }
         ).then(() => {
-          window.location.href = `./detail_artikel.html?slug=${getSlug()}`;
+          Swal.fire({
+            title: "Good job!",
+            text: "Article updated!",
+            icon: "success",
+        })
+        .then(() => {
+          window.location.href = `./detail_artikel.html?slug=${getSlug('slug')}`;
+        })
         });
       });
   }

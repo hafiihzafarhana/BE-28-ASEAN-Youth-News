@@ -6,14 +6,8 @@ let tambahData;
 let hapus_data;
 
 // ===================================================== fetch ===============================================
-function getSlug(){
-    const queryUrl = window.location.search;
-    const urlParams = new URLSearchParams(queryUrl);
-    const getSlug = urlParams.get('slug')
-    return getSlug;
-}
 
-fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}`)
+fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel/?slug=${getSlug('slug')}`)
     .then(subjek => subjek.json())
     .then(datas => {
         checkUserInWebStorage()
@@ -30,7 +24,7 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}
                 <button class="btn"><i class="fa-solid fa-share"></i></button>
 
                 <div class="btn-group d-flex align-items-center justify-content-center" id="dropdow_profile">
-                ${(pengguna_saat_ini.role == 2 ? (`<button type="button" class="btn dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>`) : (``))}
+                ${(pengguna_saat_ini?.role == 2 ? (`<button type="button" class="btn dropdown-toggle-split" data-bs-toggle="dropdown"><i class="fa-solid fa-ellipsis-vertical"></i></button>`) : (``))}
                     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start mt-2" id="drowdown_list">
                         <li><a href="./edit_artikel.html?slug=${detail.slug}" class="dropdown-item btn">Ubah</a></li>
                         <li><button onClick="hapus_data('${detail.id_artikel}')" class="dropdown-item btn">Hapus</a></li>
@@ -42,7 +36,7 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}
         <p class="mt-3 px-2" id="isi_isi">
         </p>
         <p class="btn bg-prima text-white" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            Komentar (${detail.komentar.length})
+            Comments (${detail.komentar.length})
         </p>
         <div class="collapse mt-3" id="collapseExample">
             <div class="card card-body">
@@ -51,7 +45,6 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}
                         <div class="d-flex flex-column">
                             <div class="d-flex gap-2">
                                 <p class="fw-bold">${e.username_user}</p>
-                                <p class="text-12px"><i>21 Desember 2022</i></p>
                             </div>
                             <p>"${e.isiKomen}"</p>
                         </div>`)
@@ -60,9 +53,9 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}
                 <div class="mt-3">
                     <div class="form-floating">
                         <textarea class="form-control" placeholder="Leave a comment here" id="fillKomen"></textarea>
-                        <label for="fillKomen">Tulis komentar ...</label>
+                        <label for="fillKomen">Enter Comment</label>
                     </div>
-                    <button class="btn bg-prima mt-3 text-white text-end" id="tmb_komen" onClick="tambahData('${detail.id_artikel}')">Kirim</button>
+                    <button class="btn bg-prima mt-3 text-white text-end" id="tmb_komen" onClick="tambahData('${detail.id_artikel}')">Send</button>
                 </div>
             </div>
         </div>`;
@@ -85,11 +78,11 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}
 
     edit_data = (id) => {
         if(pengguna_saat_ini != null){
-        fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?id_artikel=${id}`)
+        fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel/${id}`)
             .then(subjek => subjek.json())
             .then(dataArtikel => {
-                const checkLikeUser = dataArtikel[0].like_artikel.filter((e) => e.username_user == pengguna_saat_ini.username_user);
-                const getDataLikeArtikel = dataArtikel[0].like_artikel.map(e => {
+                const checkLikeUser = dataArtikel.like_artikel.filter((e) => e.username_user == pengguna_saat_ini.username_user);
+                const getDataLikeArtikel = dataArtikel.like_artikel.map(e => {
                     return e;
                 })
                 let encoded = encodeURI(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel/${id}`);
@@ -131,22 +124,28 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}
                 }
             })
         } else{
-            window.location.href = "./login.html";
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You should login !',
+            }).then(() => {
+                window.location.href = "./login.html";
+            })
         }
     }
 
     tambahData = (id) => {
         if(pengguna_saat_ini != null){
-        fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?id_artikel=${id}`)
+        fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel/${id}`)
             .then(subjek => subjek.json())
             .then(data => {
-                const getDataKomentar = data[0].komentar.map(e => {
+                const getDataKomentar = data.komentar.map(e => {
                     return e;
                 })
 
                 if(document.getElementById('fillKomen').value != ""){
                 let dataKomenBaru = {
-                    id_komentar:data[0].komentar.length+1,
+                    id_komentar:data.komentar.length+1,
                     username_user:pengguna_saat_ini.username_user,
                     isiKomen:document.getElementById('fillKomen').value
                 }
@@ -183,7 +182,13 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}
                 }
             })
         } else{
-            window.location.href = "./login.html";
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'You should login !',
+            }).then(() => {
+                window.location.href = "./login.html";
+            })
         }
     }
 
@@ -192,6 +197,12 @@ fetch(`https://634be8e9317dc96a308d3518.mockapi.io/ayf/artikel?slug=${getSlug()}
             method:"DELETE"
         })
         .then(() => {
-            window.location.href="./../index.html";
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Article was deleted !',
+            }).then(() => {
+                window.location.href="./../index.html";
+            })
         })
     }

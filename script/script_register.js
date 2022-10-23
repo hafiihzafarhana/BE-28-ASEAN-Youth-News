@@ -16,7 +16,7 @@ function kosongAtauAdaSpasi(str){
     return str === null || str.match(/^ *$/) !== null;
 }
 
-// memvalidasi setiap field 
+// memvalidasi setiap field
 function Validasi(){
     let nama_regex = /^[a-zA-Z ]+$/; //abc ABC
     let email_regex = /^[a-zA-Z0-9]+@(gmail)\.com$/; //abc ABC 123@gmail.com
@@ -24,32 +24,56 @@ function Validasi(){
     let password_regex = /^[a-zA-Z0-9]{8,}$/;
 
     if(kosongAtauAdaSpasi(regist_username.value) || kosongAtauAdaSpasi(regist_email.value) || kosongAtauAdaSpasi(regist_born.value) || kosongAtauAdaSpasi(regist_password.value)){
-        alert("Tidak Boleh Kosong")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Should not be empty !',
+        })
         return false;
     }
 
     if(!username_regex.test(regist_username.value)){
-        alert('Format nama salah. Harus abc / ABC / 0-9')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'The username format is incorrect. Valid format: abc/ABC/123 !',
+        })
         return false;
     }
 
     if(!password_regex.test(regist_password.value)){
-        alert('Password tidak boleh kurang dari 8 karakter')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'The password must be greater than equal to 8 characters !',
+        })
         return false;
     }
 
     if(!email_regex.test(regist_email.value)){
-        alert('Format email salah. Harus abc / ABC / 123@gmail.com')
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'The email format is incorrect. Valid format: abc/ABC/123@gmail.com !',
+        })
         return false;
     }
 
     if(regist_negara.value == ""){
-        alert("Negara tidak boleh kosong");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'The country should not be empty !',
+        })
         return false;
     }
 
     if(regist_gender.value == ""){
-        alert("Gender tidak boleh kosong");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'The gender should not be empty !',
+        })
         return false;
     }
 
@@ -66,6 +90,10 @@ function userRegist(){
             fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/users')
             .then(subjek => subjek.json())
             .then(datas => {
+
+                let apakahAdaUsernameSama = datas.filter(e => e.username_user == regist_username.value)
+
+                if(apakahAdaUsernameSama.length < 1){
                 // username_user: "hafiihza"
                 const ids = datas.map((e) => {
                     return e.id_user
@@ -80,14 +108,14 @@ function userRegist(){
                     username_user: regist_username.value,
                     tanggal_lahir: regist_born.value,
                     negara: regist_negara.value,
-                    password: regist_password.value,
+                    password: enkripsi_password(),
                     id_user: max + 1,
                     fotoProfile_user: "",
                     number_user:"",
                     email:regist_email.value,
                     gender:regist_gender.value
                 }
-
+                console.log(dataMasuk)
                 fetch('https://634be8e9317dc96a308d3518.mockapi.io/ayf/users',{
                     method:'POST',
                     headers: {
@@ -96,8 +124,21 @@ function userRegist(){
                     body:JSON.stringify(dataMasuk)
                     })
                     .then(() =>{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Your account has been registered !',
+                        })
                         window.location.href = './login.html';
                     })
+
+                } else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'This username has been registered !',
+                    })
+                }
             })
     }
 }
@@ -111,6 +152,12 @@ function checkUserInWebStorage(){
         pengguna_saat_ini = JSON.parse(sessionStorage.getItem('dataUser'));
     }
 }
+
+function enkripsi_password(){
+    let check = "eZd?k5Prmc%RZCwPA4tTg2QUE*DfzuUpwC&sTQMU%ka+%XHQP#vT2pMh3B+?FYX?n-BrJ"
+    var pass12 = CryptoJS.AES.encrypt(regist_password.value,check);
+    return pass12.toString()
+  }
 
 // ===================================================== Event ======================================================
 

@@ -102,30 +102,30 @@
 
     <div class="wrapper shadow">
         <div class="title">
-          Form Tambah Artikel
+          Post Article
         </div>
         <div class="form">
             <div class="mb-3">
-                <label for="tambah_judul" class="form-label">Judul Artikel</label>
-                <input type="text" class="form-control" id="tambah_judul" placeholder="Masukan Judul">
+                <label for="tambah_judul" class="form-label">Title</label>
+                <input type="text" class="form-control" id="tambah_judul" placeholder="Enter Title ...">
                 <p id="datame"></p>
               </div>
               <div class="mb-3">
                 <label for="tambah_slug" class="form-label">Slug</label>
-                <input type="text" class="form-control" id="tambah_slug" placeholder="Masukan Slug" disabled>
+                <input type="text" class="form-control" id="tambah_slug" placeholder="Enter Slug ..." disabled>
               </div>
               <div class="mb-3">
-                <label for="tambah_gambar" class="form-label">Nama Penulis</label>
-                <input type="text" class="form-control" id="tambah_penulis" placeholder="Masukan Nama">
+                <label for="tambah_gambar" class="form-label">Author</label>
+                <input type="text" class="form-control" id="tambah_penulis" placeholder="Enter Author ...">
               </div>
               <div class="mb-3">
-                <label for="tambah_gambar" class="form-label">Gambar Artikel</label>
-                <input type="text" class="form-control" id="tambah_gambar" placeholder="Masukan Link Gambar">
+                <label for="tambah_gambar" class="form-label">Image</label>
+                <input type="text" class="form-control" id="tambah_gambar" placeholder="Image ...">
               </div>
               <div class="mb-3">
-                <label for="tambah_kategori" class="form-label">Tambah Kategori</label>
+                <label for="tambah_kategori" class="form-label">Category</label>
                 <select class="form-select" aria-label="Default select example" id="tambah_kategori">
-                  <option value="" selected>Pilih Kategori</option>
+                  <option value="" selected>Choose Category</option>
                   <option value="Sosial">Sosial</option>
                   <option value="Kepemudaan">Kepemudaan</option>
                   <option value="Bisnis">Bisnis</option>
@@ -133,11 +133,11 @@
                 </select>
               </div>
               <div class="mb-3">
-                <label for="tambah_isi" class="form-label">Isi</label>
-                <textarea class="form-control" id="tambah_isi" rows="6"></textarea>
+                <label for="tambah_isi" class="form-label">Content</label>
+                <textarea class="form-control" id="tambah_isi" rows="6" placeholder="Enter Content ..."></textarea>
               </div>
           <div class="inputfield">
-            <input type="button" id="tambah_btn" value="UPLOAD" class="btn">
+            <input type="button" id="tambah_btn" value="Post" class="btn">
           </div>
         </div>
     </div>
@@ -149,7 +149,7 @@
 
           <!-- Option 1: Bootstrap Bundle with Popper -->
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+          <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
           <script src="./../script/script_index.js"></script>
           <script src="./../script/script_tambah_artikel.js"></script>
 </body>
